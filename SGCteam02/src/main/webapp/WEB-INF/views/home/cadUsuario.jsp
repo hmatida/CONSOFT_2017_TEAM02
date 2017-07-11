@@ -46,11 +46,15 @@
 
 <body>
 
-	<h2>Página de Login SISTEMA DE CONFERÊNCIA</h2>
-	<form action="efetuaLogin" method="post">
-		Login: <input type="text" name="login" /> <br /> Senha: <input
-			type="password" name="senha" /> <br /> <input type="submit"
+	<h2>Cadastro de usuario</h2>
+	<form action="salvar" method="post">
+		Nome: <input type="text" name="login" /> <br />
+		Sobrenome: <input type="text" name="sobrenome" /> <br />
+		CPF: <input type="text" name="cpf" /> <br />
+		E-mail: <input type="email" name="cpf" /> <br /> 
+		<input type="submit"
 			value="Entrar" />
+			<input type="button" value="Cadastrar-se"/>
 	</form>
 </body>
 </html>
