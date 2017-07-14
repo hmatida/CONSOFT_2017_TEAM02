@@ -19,8 +19,6 @@ public class Product
    private String name;
    private String description;
    private BigDecimal price;
-   @ManyToOne
-   private Category category;
 
    public Integer getId()
    {
@@ -60,15 +58,5 @@ public class Product
    public void setPrice(BigDecimal price)
    {
       this.price = price;
-   }
-
-   public Category getCategory()
-   {
-      return this.category;
-   }
-
-   public void setCategory(Category category)
-   {
-      this.category = category;
    }
 }

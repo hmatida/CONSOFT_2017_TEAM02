@@ -1,9 +1,13 @@
 package SGCteam02.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Local {
@@ -16,6 +20,9 @@ public class Local {
 	private String cep;
 	private String bairro;
 	private String sala;
+	
+	@OneToMany
+	private List <Evento> evento;;
 	
 	
 	public Long getIdLocal() {

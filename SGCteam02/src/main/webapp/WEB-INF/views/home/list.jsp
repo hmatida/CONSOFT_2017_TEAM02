@@ -101,53 +101,31 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
-		<div class="col-md-2">
+	<div class="col-md-12">
+		<div class="container">
+			<h4> Locais cadastrados</h4>
+			<p> Listagem de locais já cadastrados:</p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>Endereço</td>
+						<td>Número</td>
+						<td>CEP</td>
+						<td>Bairro</td>
+						<td>Sala</td>
+					</tr>
+					</thead>
+				<c:forEach items="${listLocal}" var="local">
+				<tr>
+					<td>${local.endereco}</td>
+					<td>${local.numero}</td>
+					<td>${local.cep}</td>
+					<td>${local.bairro}</td>
+					<td>${local.sala}</td>
+				</tr>
+				</c:forEach>
+			</table>
 		</div>
-		<div class="col-md-8">
-			<form method="post" action="">
-				<div class="form-group">
-					 
-					<label for="endereco">
-						Endereço
-					</label>
-					<input type="text" class="form-control" id="endereco" name="endereco" />
-				</div>
-				<div class="form-group">
-					 
-					<label for="numero">
-						Número
-					</label>
-					<input type="text" class="form-control" id="numero" name="numero"/>
-				</div>
-				<div class="form-group">
-					 
-					<label for="cep">
-						CEP
-					</label>
-					<input type="text" class="form-control" id="cep" name="cep" />
-				</div>
-				<div class="form-group">
-					<label for="bairro">
-						Bairro
-					</label>
-					<input type="text" class="form-control" id="bairro" name="bairro"/>
-				</div>
-				<div class="form-group">
-					<label for="sala">
-						Sala
-					</label>
-					<input type="text" class="form-control" id="sala" name="sala"/>
-				</div>
-				
-				<button type="submit" class="btn btn-default">
-					Submit
-				</button>
-			</form>
-		</div>
-		<div class="col-md-2">
-		</div>
-	</div>
 	</div>
 </div>
 </div>
