@@ -28,23 +28,22 @@ public class LocalController {
 	private LocalDao localDao;
 	
 	@GetMapping("/form")
-	public ModelAndView form (Local local){
-		ModelAndView modelAndView= new ModelAndView("home/cadLocal");
-		return modelAndView;
+	public String form (){
+		return "/cadLocal";
 	
 	}
 	
 	@PostMapping
-	public ModelAndView save(@Valid Local local, BindingResult bindingResult){
+	public ModelAndView save(@Valid Local local,
+			BindingResult bindingResult){
 		if (bindingResult.hasErrors())
 	      {
-	         return form(local);
+	         return null;
 	      }
 	      localDao.save(local);
 	      return new ModelAndView("redirect:/cadLocal");
 	}
-	
-	@GetMapping
+	@GetMapping("/list")
 	public ModelAndView list(){
 		ModelAndView modelAndView = 
 				new ModelAndView("home/list"); 

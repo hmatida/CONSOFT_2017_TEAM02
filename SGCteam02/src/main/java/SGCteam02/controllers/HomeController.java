@@ -12,4 +12,16 @@ public class HomeController
    {
       return "home/index";
    }
+   
+   @GetMapping("/cadLocal")
+   public String cadLocal()
+   {
+      return "home/cadLocal";
+   }
+   
+//   
+//   @GetMapping("/list")
+//   public String list(){
+//	   return "home/list";
+//   }
 }
