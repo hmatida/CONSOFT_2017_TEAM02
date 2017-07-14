@@ -12,20 +12,20 @@ import javax.persistence.ManyToOne;
 public class FasesConfecencia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String nome;
 	private Calendar iniDAte;
 	private Calendar fimDate;
 	
-	@ManyToOne
-	private Conferencia conferencia;
+//	@ManyToOne
+//	private Conferencia conferencia;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -52,14 +52,5 @@ public class FasesConfecencia {
 	public void setFimDate(Calendar fimDate) {
 		this.fimDate = fimDate;
 	}
-
-	public Conferencia getConferencia() {
-		return conferencia;
-	}
-
-	public void setConferencia(Conferencia conferencia) {
-		this.conferencia = conferencia;
-	}
-	
 	
 }

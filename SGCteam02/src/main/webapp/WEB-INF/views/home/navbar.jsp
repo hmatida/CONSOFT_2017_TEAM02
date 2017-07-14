@@ -1,22 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@attribute name="extraScripts" fragment="true"%>
+<%@attribute name="extraStyles" fragment="true"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html >
 <head>
+  <meta charset="UTF-8">
+  <title>P�gina inicial</title>
 
-<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/assets/js/bootstrap.min.js'/>">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>">
+  <link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Home page</title>
+  <!-- style -->
+   <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
+   <link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
+   <jsp:invoke fragment="extraStyles"/>
 </head>
 
 <body>
-<div class="cotainer">
+  
+
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
 			<nav class="navbar navbar-default" role="navigation">
@@ -95,67 +99,15 @@
 				</div>
 				
 			</nav>
-			<div class="container-fluid">
-			<h3>
-				Cadastro de local
-			</h3>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-8">
-			<form method="post" action="/cadLocal">
-				<div class="form-group">
-					 
-					<label for="endereco">
-						Endereço
-					</label>
-					<input type="text" class="form-control" id="endereco" name="endereco" />
-				</div>
-				<div class="form-group">
-					 
-					<label for="numero">
-						Número
-					</label>
-					<input type="text" class="form-control" id="numero" name="numero"/>
-				</div>
-				<div class="form-group">
-					 
-					<label for="cep">
-						CEP
-					</label>
-					<input type="text" class="form-control" id="cep" name="cep" />
-				</div>
-				<div class="form-group">
-					<label for="bairro">
-						Bairro
-					</label>
-					<input type="text" class="form-control" id="bairro" name="bairro"/>
-				</div>
-				<div class="form-group">
-					<label for="sala">
-						Sala
-					</label>
-					<input type="text" class="form-control" id="sala" name="sala"/>
-				</div>
-				
-				<button type="submit" class="btn btn-default">
-					Submit
-				</button>
-			</form>
-		</div>
-		<div class="col-md-2">
-		</div>
-	</div>
 	</div>
 </div>
-</div>
+  <!-- FINAL NAV -->
+	<jsp:doBody />
 
-	<script src="assets/js/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
+<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
+<jsp:invoke fragment="extraScripts"/>
 
 </body>
 </html>
