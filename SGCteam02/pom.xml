@@ -2,14 +2,13 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.5.3.RELEASE</version>
   </parent>
-  <groupId>SGCteam02</groupId>
-  <artifactId>SGCteam02</artifactId>
+  <groupId>SCGteam02</groupId>
+  <artifactId>SCGteam02</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -18,10 +17,6 @@
   </properties>
   <dependencyManagement />
   <dependencies>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>

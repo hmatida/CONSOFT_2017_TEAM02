@@ -11,12 +11,12 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name = "USUARIO")
+@Table(name="Usuario")
 public class Usuario {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
 	
 
@@ -59,6 +59,18 @@ public class Usuario {
 	@Size(max = 10)
 	@Column(name="SENHA")
 	private String senha;
+
+    public Usuario(String nome, String sobrenome, String cpf, String email, Date dataNascimento,
+            String login, String senha) {
+        
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.email = email;
+        this.dataNascimento = dataNascimento;
+        this.login = login;
+        this.senha = senha;
+    }
 	
 
 
@@ -67,11 +79,11 @@ public class Usuario {
 	}
 	
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

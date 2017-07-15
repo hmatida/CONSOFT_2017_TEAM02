@@ -1,6 +1,7 @@
 package SGCteam02.models;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,20 +13,19 @@ import javax.persistence.ManyToOne;
 public class FasesConfecencia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
-	private Calendar iniDAte;
-	private Calendar fimDate;
+	private Date inicialDate;
+	private Date finalDate;
 	
-//	@ManyToOne
-//	private Conferencia conferencia;
 
-	public Long getId() {
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -37,20 +37,23 @@ public class FasesConfecencia {
 		this.nome = nome;
 	}
 
-	public Calendar getIniDAte() {
-		return iniDAte;
+	public Date getInicialDate() {
+		return inicialDate;
 	}
 
-	public void setIniDAte(Calendar iniDAte) {
-		this.iniDAte = iniDAte;
+	public void setInicialDate(Date iniDAte) {
+		this.inicialDate = iniDAte;
 	}
 
-	public Calendar getFimDate() {
-		return fimDate;
+	public Date getFimDate() {
+		return finalDate;
 	}
 
-	public void setFimDate(Calendar fimDate) {
-		this.fimDate = fimDate;
+	public void setFimDate(Date fimDate) {
+		this.finalDate = fimDate;
 	}
+
+	
+	
 	
 }

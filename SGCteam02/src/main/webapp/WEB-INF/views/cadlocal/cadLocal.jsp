@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +16,7 @@
 </head>
 
 <body>
+<div class="cotainer">
 	<div class="row">
 		<div class="col-md-12">
 			<nav class="navbar navbar-default" role="navigation">
@@ -100,10 +102,11 @@
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-md-12">
 		<div class="col-md-2">
 		</div>
 		<div class="col-md-8">
-			<form method="post" action="">
+			<form method="post" action="/cadLocal">
 				<div class="form-group">
 					 
 					<label for="endereco">
@@ -146,6 +149,8 @@
 		<div class="col-md-2">
 		</div>
 	</div>
+	</div>
+</div>
 </div>
 
 	<script src="assets/js/jquery-2.1.4.min.js"></script>

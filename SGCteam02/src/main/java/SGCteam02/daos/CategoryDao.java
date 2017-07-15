@@ -5,8 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
-import SGCteam02.models.PaginatedList;
+
 import SGCteam02.models.Category;
+import SGCteam02.models.PaginatedList;
 
 @Repository
 public class CategoryDao

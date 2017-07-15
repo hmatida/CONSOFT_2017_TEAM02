@@ -1,20 +1,16 @@
 package SGCteam02.models;
 
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Conferencia {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idConf;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idConf;
 	private String nome;
 	private String nome_abre;
 	private String nome_organizador;
@@ -26,11 +22,10 @@ public class Conferencia {
 	private String email_ret;
 	private String moeda;
 	private int n_participantes;
-	
-	public Long getIdConf() {
+	public Integer getIdConf() {
 		return idConf;
 	}
-	public void setIdConf(Long idConf) {
+	public void setIdConf(Integer idConf) {
 		this.idConf = idConf;
 	}
 	public String getNome() {

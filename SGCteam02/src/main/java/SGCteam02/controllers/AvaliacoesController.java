@@ -19,27 +19,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import SGCteam02.daos.AvaliacoesDao;
 import SGCteam02.daos.FasesConfDao;
 import SGCteam02.models.*;
 
 @Controller
-@RequestMapping("/fasesConferencia")
+@RequestMapping("/avaliacoes")
 @Transactional
-public class FasesConfController {
+public class AvaliacoesController {
 
 	@Autowired
-	private FasesConfDao fasesConfDao;
+	private AvaliacoesDao avDao;
 	
-	@GetMapping("/form-input")
+	@GetMapping("avaliacoes/")
 	public String form(){
-		return "/fasesConferencia/form-input";
+		return "/avaliacoes/index";
 	}
 	
-	@GetMapping("/list1")
+	
+	/*
+	@GetMapping("/listarAvaliacoes")
 	public ModelAndView list(){
 		ModelAndView mAV = 
-				new ModelAndView("fasesConferencia/list");
-		mAV.addObject("listFases", fasesConfDao.findAll());
+				new ModelAndView("avaliacoes/list");
+		mAV.addObject("listAvaliacoes", avDao.findAll());
 		return mAV;
 	}
 	
@@ -66,5 +69,5 @@ public class FasesConfController {
 		//fasesConfDao.save()
 		return moAV;
 	}
-	
+	*/
 }

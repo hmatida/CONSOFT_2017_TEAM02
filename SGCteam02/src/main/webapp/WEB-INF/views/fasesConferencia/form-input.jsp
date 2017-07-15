@@ -40,7 +40,7 @@
 						Data inicial
 					</label>
 					<label class="col-xs-3">
-					<input type="date" class="form-control" id="date" name="inidate"/>
+					<input type="date" class="form-control" id="date" name="inicialDate"/>
 					</label>
 				</div>
 				<div class="form-group">
@@ -49,7 +49,7 @@
 						Data final
 					</label>
 					<label class="col-xs-3">
-					<input type="date" class="form-control" id="fimdate" name="fim_date" />
+					<input type="date" class="form-control" id="fimdate" name="fimDate" />
 					</label>
 				</div>				
 				<button type="submit" class="btn btn-default">

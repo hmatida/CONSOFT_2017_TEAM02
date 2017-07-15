@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import SGCteam02.daos.ProductDao;
 import SGCteam02.daos.CategoryDao;
-import SGCteam02.models.Product;
+import SGCteam02.daos.ProductDao;
 import SGCteam02.models.Category;
+import SGCteam02.models.Product;
 
 @Controller
 @RequestMapping("/product")
