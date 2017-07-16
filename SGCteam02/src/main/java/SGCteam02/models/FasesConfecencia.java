@@ -1,31 +1,47 @@
 package SGCteam02.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
+@Table(name="fases_confecencia")
 public class FasesConfecencia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String nome;
-	private Date inicialDate;
-	private Date finalDate;
 	
+	@Column
+	@DateTimeFormat(iso=ISO.DATE)
+	private Calendar initDate;
+	
+	@Column
+	@DateTimeFormat(iso=ISO.DATE)
+	private Calendar fimDate;
+	
+	@ManyToOne
+	private Conferencia conferencia;
 
-
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -37,23 +53,21 @@ public class FasesConfecencia {
 		this.nome = nome;
 	}
 
-	public Date getInicialDate() {
-		return inicialDate;
+	public Calendar getInitDate() {
+		return initDate;
 	}
 
-	public void setInicialDate(Date iniDAte) {
-		this.inicialDate = iniDAte;
+	public void setInitDate(Calendar initDate) {
+		this.initDate = initDate;
 	}
 
-	public Date getFimDate() {
-		return finalDate;
+	public Calendar getFimDate() {
+		return fimDate;
 	}
 
-	public void setFimDate(Date fimDate) {
-		this.finalDate = fimDate;
+	public void setFimDate(Calendar fimDate) {
+		this.fimDate = fimDate;
 	}
 
-	
-	
 	
 }

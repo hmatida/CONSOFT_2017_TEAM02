@@ -26,13 +26,13 @@
 		<div class="col-md-2">
 		</div>
 		<div class="col-md-8">
-			<form method="post" action="/fasesConferencia">
+			<form method="post" action="/fasesConferencia/updateSave/${fases.id}">
 				<div class="form-group">
 					 
 					<label for="nome">
 						Nome
 					</label>
-					<input type="text" class="form-control" id="nome" name="nome" />
+					<input type="text" class="form-control" id="nome" value="${fases.nome}" name="nome" />
 				</div>
 				<div class="form-group">
 					 
@@ -40,7 +40,7 @@
 						Data inicial
 					</label>
 					<label class="col-xs-3">
-					<input type="date" class="form-control" id="date" name="initDate"/>
+					<input type="date" class="form-control" id="initDate" value="${fases.initDate}" name="initDate"/>
 					</label>
 				</div>
 				<div class="form-group">
@@ -49,7 +49,7 @@
 						Data final
 					</label>
 					<label class="col-xs-3">
-					<input type="date" class="form-control" id="fimdate" name="fimDate" />
+					<input type="date" class="form-control" id="fimdate" value="${fases.fimDate}" name="fimDate" />
 					</label>
 				</div>				
 				<button type="submit" class="btn btn-default">

@@ -1,16 +1,24 @@
 package SGCteam02.models;
 
+import java.util.Calendar;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
+@Table(name="conferencia")
 public class Conferencia {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idConf;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String nome;
 	private String nome_abre;
 	private String nome_organizador;
@@ -22,11 +30,22 @@ public class Conferencia {
 	private String email_ret;
 	private String moeda;
 	private int n_participantes;
-	public Integer getIdConf() {
-		return idConf;
+	
+	@Column
+	@DateTimeFormat(iso=ISO.DATE)
+	private Calendar dataEvento;
+	
+	public Calendar getDataEvento() {
+		return dataEvento;
 	}
-	public void setIdConf(Integer idConf) {
-		this.idConf = idConf;
+	public void setDataEvento(Calendar dataEvento) {
+		this.dataEvento = dataEvento;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setIdConf(Long id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;

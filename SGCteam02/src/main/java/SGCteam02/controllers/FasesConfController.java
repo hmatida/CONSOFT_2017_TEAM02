@@ -47,7 +47,7 @@ public class FasesConfController {
 	public ModelAndView save(@Valid FasesConfecencia fasesConf,
 			BindingResult bR){
 		
-		System.out.println(String.valueOf(fasesConf.getInicialDate()) + " " + String.valueOf(fasesConf.getFimDate()) );
+		//System.out.println(String.valueOf(fasesConf.getInicialDate()) + " " + String.valueOf(fasesConf.getFimDate()) );
 		fasesConfDao.save(fasesConf);
 		return new ModelAndView("redirect:/fasesConferencia/list1");
 	}
@@ -61,10 +61,15 @@ public class FasesConfController {
 	@GetMapping("/update/{id}")
 	public ModelAndView update(@PathVariable("id") Long id){
 		
-		ModelAndView moAV = new ModelAndView("fasesConferencia/form-input");
-		moAV.addObject(fasesConfDao.findOne(id));
-		//fasesConfDao.save()
+		ModelAndView moAV = new ModelAndView("fasesConferencia/form-update");
+		moAV.addObject("fases", fasesConfDao.findOne(id));
 		return moAV;
+	}
+	@PostMapping("/updateSave/{id}")
+	public ModelAndView update(@PathVariable("id") Long id, @Valid FasesConfecencia fasesConf){
+		fasesConf.setId(id);
+		fasesConfDao.save(fasesConf);
+		return new ModelAndView("redirect:/fasesConferencia/list1");
 	}
 	
 }
