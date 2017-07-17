@@ -3,6 +3,7 @@ package SGCteam02.controllers;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -51,7 +52,6 @@ public class FasesConfController {
 	public ModelAndView save(@Valid FasesConfecencia fasesConf,
 			BindingResult bR){
 		
-		//System.out.println(String.valueOf(fasesConf.getInicialDate()) + " " + String.valueOf(fasesConf.getFimDate()) );
 		fasesConfDao.save(fasesConf);
 		return new ModelAndView("redirect:/fasesConferencia/list1");
 	}
@@ -82,6 +82,8 @@ public class FasesConfController {
 		mAV.addObject("conferencia", conferencia.findAll());	
 		return mAV;
 	}
+	
+	
 	
 	
 }

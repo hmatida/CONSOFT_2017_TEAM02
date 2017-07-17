@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib tagdir="/WEB-INF/tags/template" prefix="template" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -34,8 +35,8 @@
 				<c:forEach items="${listFases}" var="fases">
 				<tr>
 					<td>${fases.nome}</td>
-					<td>${fases.initDate}</td>
-					<td>  </td>
+					<td><fmt:formatDate value="${fases.initDate.time}" pattern="dd/MM/yyyy" /></td>
+					<td><fmt:formatDate value="${fases.fimDate.time}" pattern="dd/MM/yyyy" /></td>
 					<td>
 						<div class="btn-group pull-right">
 							<a class="btn btn-sm btn-primary" action="/fasesConferencia/update" href=/fasesConferencia/update/${fases.id}>Editar</a>
