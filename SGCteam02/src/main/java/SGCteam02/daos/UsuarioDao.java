@@ -6,49 +6,15 @@
 package SGCteam02.daos;
 
 import SGCteam02.models.Usuario;
-import java.util.List;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
- * @author Roosevelt
+ * @author Nélio
  */
-public class UsuarioDao {
-    
-    @Autowired
-	SessionFactory hibernateSession;
+public interface UsuarioDao extends CrudRepository<Usuario, Long>{
 
-	public void add(Usuario user) {
-		hibernateSession.getCurrentSession().save(user);
-
-	}
-
-	public void edit(Usuario user) {
-		hibernateSession.getCurrentSession().update(user);
-
-	}
-
-	
-	public void delete(int userId) {
-		Usuario tempUser = (Usuario) hibernateSession.getCurrentSession()
-				.get(Usuario.class, userId);
-		hibernateSession.getCurrentSession().delete(tempUser);
-
-	}
-
-	
-	public Usuario getUsuario(int userId) {
-		Usuario tempUser = (Usuario) hibernateSession.getCurrentSession()
-				.get(Usuario.class, userId);
-		return tempUser;
-	}
-
-	
-	public List<Usuario> getAllUsuario() {
-		return hibernateSession.getCurrentSession()
-				.createQuery("Select * from Usuario").list();
-	}
 
     
 }

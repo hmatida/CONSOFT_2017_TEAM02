@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Listing</title>
+<title>SGC</title>
 
 <!-- bootstrap -->
 <link rel="stylesheet"

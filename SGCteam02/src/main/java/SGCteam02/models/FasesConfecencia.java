@@ -23,6 +23,7 @@ public class FasesConfecencia {
 	private Long id;
 	private String nome;
 	
+	
 	@Column
 	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar initDate;
@@ -74,6 +75,8 @@ public class FasesConfecencia {
 	public void setConferencia(Conferencia conferencia) {
 		this.conferencia = conferencia;
 	}
+
+	
 
 	
 }

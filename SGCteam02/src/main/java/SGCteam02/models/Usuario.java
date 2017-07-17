@@ -1,10 +1,9 @@
 package SGCteam02.models;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.*;
 
 import org.hibernate.validator.constraints.Email;
@@ -15,63 +14,35 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Usuario {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private long idUsuario;
 
-	
-
-	@NotNull
-	@NotBlank
-	@Size(max = 255)
-	@Column(name="NOME")
 	private String nome;
 
-	@NotNull
-	@NotBlank
-	@Size(max = 255)
-	@Column(name="SOBRENOME")
+
 	private String sobrenome;
 
-	@NotNull
-	@NotBlank
-	@Size(max = 12)
-	@Column(name="CPF")
+
 	private String cpf;
 
-	@NotNull
-	@NotBlank
-	@Size(max = 255)
-	@Column(name="EMAIL", unique=true)
 	private String email;
 
-	@NotNull
+	
 	@Column(name="DATA_NASCIMENTO")
 	private Date dataNascimento;
 
-	@NotNull
-	@NotBlank
 	@Size(max = 255)
 	@Column(name="LOGIN", unique=true)
 	private String login;
 
-	@NotNull
-	@NotBlank
+	
 	@Size(max = 10)
 	@Column(name="SENHA")
 	private String senha;
 
-    public Usuario(String nome, String sobrenome, String cpf, String email, Date dataNascimento,
-            String login, String senha) {
-        
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.cpf = cpf;
-        this.email = email;
-        this.dataNascimento = dataNascimento;
-        this.login = login;
-        this.senha = senha;
-    }
-	
+	@ManyToMany
+	@JoinColumn(name="idUsuario", referencedColumnName="idFuncao")
+	private List<Funcao> func;
 
 
 	public Usuario(){
@@ -79,12 +50,12 @@ public class Usuario {
 	}
 	
 
-	public int getId() {
-		return id;
+	public long getId() {
+		return idUsuario;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getNome() {
