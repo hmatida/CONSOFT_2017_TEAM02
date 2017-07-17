@@ -1,12 +1,14 @@
 package SGCteam02.models;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -18,6 +20,7 @@ public class Conferencia {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id_conferencia")
 	private Long id;
 	private String nome;
 	private String nome_abre;
@@ -34,6 +37,9 @@ public class Conferencia {
 	@Column
 	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar dataEvento;
+	
+	@OneToMany(mappedBy="conferencia")
+	private List<FasesConfecencia> fasesConf;
 	
 	public Calendar getDataEvento() {
 		return dataEvento;
@@ -112,6 +118,15 @@ public class Conferencia {
 	}
 	public void setN_participantes(int n_participantes) {
 		this.n_participantes = n_participantes;
+	}
+	public List<FasesConfecencia> getFasesConf() {
+		return fasesConf;
+	}
+	public void setFasesConf(List<FasesConfecencia> fasesConf) {
+		this.fasesConf = fasesConf;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

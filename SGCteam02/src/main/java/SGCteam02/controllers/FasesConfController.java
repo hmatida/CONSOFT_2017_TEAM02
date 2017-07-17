@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import SGCteam02.daos.FasesConfDao;
 import SGCteam02.models.*;
+import SGCteam02.daos.*;
 
 @Controller
 @RequestMapping("/fasesConferencia")
@@ -30,10 +31,13 @@ public class FasesConfController {
 	@Autowired
 	private FasesConfDao fasesConfDao;
 	
-	@GetMapping("/form-input")
-	public String form(){
-		return "/fasesConferencia/form-input";
-	}
+	@Autowired
+	private ConferenciaDao conferencia;
+	
+//	@GetMapping("/form-input")
+//	public String form(){
+//		return "/fasesConferencia/form-input";
+//	}
 	
 	@GetMapping("/list1")
 	public ModelAndView list(){
@@ -71,5 +75,13 @@ public class FasesConfController {
 		fasesConfDao.save(fasesConf);
 		return new ModelAndView("redirect:/fasesConferencia/list1");
 	}
+	
+	@GetMapping("/form-input")
+	public ModelAndView form(){
+		ModelAndView mAV = new ModelAndView("fasesConferencia/form-input");
+		mAV.addObject("conferencia", conferencia.findAll());	
+		return mAV;
+	}
+	
 	
 }

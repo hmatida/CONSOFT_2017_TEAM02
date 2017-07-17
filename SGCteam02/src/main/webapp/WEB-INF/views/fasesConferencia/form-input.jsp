@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="<c:url value='/assets/js/bootstrap.min.js'/>">
 
 
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cad Fases Conf</title>
 </head>
@@ -27,8 +28,13 @@
 		</div>
 		<div class="col-md-8">
 			<form method="post" action="/fasesConferencia">
-				<div class="form-group">
-					 
+			 <label for="conferencia" name="conferencia">Conferencia</label>
+			 <select name="conferencia">
+			 <c:forEach items="${conferencia}" var="conf">
+			 	<option value=${conf.id}>${conf.nome_abre}</option>
+			 </c:forEach>
+			 </select>
+				<div class="form-group">					 
 					<label for="nome">
 						Nome
 					</label>
