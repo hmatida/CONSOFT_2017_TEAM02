@@ -1,5 +1,9 @@
 package SGCteam02.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,20 +18,23 @@ public class Comite {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
+	private int nroParticipantes;
+	
+	private ArrayList<Usuario> usuarios;
 	
 	@ManyToOne
 	@JoinColumn(name="id_conferencia", referencedColumnName="id_conferencia")
 	private Conferencia conferencia;
+	
 
-
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -41,8 +48,23 @@ public class Comite {
 		this.conferencia = conferencia;
 	}
 
-	
-	
-	
 
+	public int getNroParticipantes() {
+		return nroParticipantes;
+	}
+
+
+	public void setNroParticipantes(int nroParticipantes) {
+		this.nroParticipantes = nroParticipantes;
+	}
+
+
+	public ArrayList<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+
+	public void setUsuarios(ArrayList<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
 }

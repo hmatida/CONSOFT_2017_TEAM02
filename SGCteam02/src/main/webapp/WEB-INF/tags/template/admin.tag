@@ -33,7 +33,7 @@
 						class="icon-bar">Forum</span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Página Inicial</a>
+				<a class="navbar-brand" href="/inicio">Página Inicial</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="menu">
@@ -83,14 +83,17 @@
 									class="glyphicon glyphicon-menu-hamburger"></span>Definir Fases</a></li>
 									<li><a href="<c:url value='/fasesConferencia/form-input'/>"><span
 									class="glyphicon glyphicon-menu-hamburger"></span>Inscrever-se</a></li>
-									<li><a href="<c:url value='/grupos/listar'/>"><span
+									<li><a href="<c:url value='/conferencia/list'/>"><span
 									class="glyphicon glyphicon-menu-hamburger"></span>Listar Conferências</a></li>
-									<li><a href="<c:url value='/grupos/listar'/>"><span
+									<li><a href="<c:url value='/evento/list'/>"><span
 									class="glyphicon glyphicon-menu-hamburger"></span>Eventos da Conferência</a></li>
 
 						</ul></li>
-						
-						
+						<ul class="nav navbar-nav">
+						<li>
+							<a href="/">Sair</a>
+						</li>
+						</ul>
 				</ul>
 
 			</div>
