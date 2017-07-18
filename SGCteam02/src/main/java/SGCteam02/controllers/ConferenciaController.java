@@ -49,4 +49,12 @@ public class ConferenciaController {
 		confDao.delete(id);
 		return new ModelAndView ("redirect:/conferencia/list");
 	}
+	
+	@GetMapping("/update/{id}")
+	public ModelAndView update(@PathVariable("id") Long id){
+		
+		ModelAndView moAV = new ModelAndView("conferencia/form-input");
+		moAV.addObject("conferencia", confDao.findOne(id));
+		return moAV;
+	}
 }

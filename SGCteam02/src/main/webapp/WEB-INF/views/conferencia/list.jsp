@@ -4,14 +4,15 @@
 <template:admin>
 
 	<body>
+	<div>
 		<div class="cotainer">
-			<div class="row">
+			
 				<div class="col-md-12">
-					<div class="container">
+					
 						<h2 class="basic-tittle">Conferencia Cadastradas</h2>
 						
 						<p>Listagem de conferencia já cadastradas:</p>
-						<table class="table table-striped">
+						<table class="table table-condensed table-bordered table-striped table-hover">
 							<thead>
 								<tr>
 									<td>Nome</td>
@@ -69,7 +70,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		
 
 		<script src="assets/js/jquery-2.1.4.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
