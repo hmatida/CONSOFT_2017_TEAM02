@@ -26,7 +26,7 @@
 		<div class="col-md-12">
 		<div class="col-md-2">
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-8 form-group">
 			<form method="post" action="/fasesConferencia">
 			 <label for="conferencia" name="conferencia">Conferencia</label>
 			 <select name="conferencia">

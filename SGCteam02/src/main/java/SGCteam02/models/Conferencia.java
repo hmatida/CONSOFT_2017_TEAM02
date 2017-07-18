@@ -41,6 +41,9 @@ public class Conferencia {
 	@OneToMany(mappedBy="conferencia")
 	private List<FasesConfecencia> fasesConf;
 	
+	@OneToMany(mappedBy="conferencia")
+	private List<Evento> eventos;
+	
 	public Calendar getDataEvento() {
 		return dataEvento;
 	}
@@ -128,6 +131,10 @@ public class Conferencia {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
+	public List<Evento> getEventos() {
+		return eventos;
+	}
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
+	}	
 }

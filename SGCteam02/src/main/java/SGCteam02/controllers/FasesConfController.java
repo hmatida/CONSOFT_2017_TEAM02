@@ -35,11 +35,6 @@ public class FasesConfController {
 	@Autowired
 	private ConferenciaDao conferencia;
 	
-//	@GetMapping("/form-input")
-//	public String form(){
-//		return "/fasesConferencia/form-input";
-//	}
-	
 	@GetMapping("/list1")
 	public ModelAndView list(){
 		ModelAndView mAV = 
@@ -81,9 +76,5 @@ public class FasesConfController {
 		ModelAndView mAV = new ModelAndView("fasesConferencia/form-input");
 		mAV.addObject("conferencia", conferencia.findAll());	
 		return mAV;
-	}
-	
-	
-	
-	
+	}	
 }

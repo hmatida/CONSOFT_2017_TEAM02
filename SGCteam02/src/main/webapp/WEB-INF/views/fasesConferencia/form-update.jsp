@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,7 +41,7 @@
 						Data inicial
 					</label>
 					<label class="col-xs-3">
-					<input type="date" class="form-control" id="initDate" value="${fases.initDate}" name="initDate"/>
+					<input type="date" class="form-control" id="initDate" name="initDate"/>
 					</label>
 				</div>
 				<div class="form-group">
@@ -49,7 +50,7 @@
 						Data final
 					</label>
 					<label class="col-xs-3">
-					<input type="date" class="form-control" id="fimdate" value="${fases.fimDate}" name="fimDate" />
+					<input type="date" class="form-control" id="fimDAte" name="fimDate" />
 					</label>
 				</div>				
 				<button type="submit" class="btn btn-default">
