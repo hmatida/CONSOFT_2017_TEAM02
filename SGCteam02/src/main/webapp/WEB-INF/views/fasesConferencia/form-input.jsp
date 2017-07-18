@@ -57,7 +57,6 @@
 					<label class="col-xs-3">
 					<input type="date" class="form-control" id="fimdate" name="fimDate" />
 					</label>
-					<input type="text" name="teste" />
 				</div>				
 				<button type="submit" class="btn btn-default">
 					Salvar

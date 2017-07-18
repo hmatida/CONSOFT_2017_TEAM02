@@ -44,6 +44,9 @@ public class Conferencia {
 	@OneToMany(mappedBy="conferencia")
 	private List<Evento> eventos;
 	
+	@OneToMany(mappedBy="conferencia")
+	private List<Sessao> sessao;
+	
 	public Calendar getDataEvento() {
 		return dataEvento;
 	}
