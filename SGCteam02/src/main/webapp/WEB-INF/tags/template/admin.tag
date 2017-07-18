@@ -46,47 +46,47 @@
 							<li><a href="<c:url value='/grupos/criar'/>"><span
 									class="glyphicon glyphicon-plus-sign"></span> Criar Grupos</a></li>
 							<li><a href="<c:url value='/grupos/listar'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Lista Grupos</a></li>
+									class="glyphicon glyphicon-list-alt"></span>Lista Grupos</a></li>
 
 						</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Gerenciar <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<c:url value='/grupos/criar'/>"><span
-									class="glyphicon glyphicon-plus-sign"></span>Usuario</a></li>
-							<li><a href="<c:url value='/grupos/listar'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Grupos</a></li>
-									<li><a href="<c:url value='/grupos/listar'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Revisões</a></li>
+							<li><a href="<c:url value='/cadusuario/list'/>"><span
+									class="glyphicon glyphicon-list-alt"></span>Usuário</a></li>
+							<li><a href="<c:url value='/cadgrupo/list'/>"><span
+									class="glyphicon glyphicon-list-alt"></span>Grupos</a></li>
+									<li><a href="<c:url value='/revisoes/list'/>"><span
+									class="glyphicon glyphicon-list-alt"></span>Revisões</a></li>
 
 						</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Trabalhos <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<c:url value='/grupos/criar'/>"><span
-									class="glyphicon glyphicon-plus-sign"></span>Submetidos</a></li>
+							<li><a href="<c:url value='/trabalho/list'/>"><span
+									class="glyphicon glyphicon-list-alt"></span>Submetidos</a></li>
 							<li><a href="<c:url value='/grupos/listar'/>"><span
 									class="glyphicon glyphicon-menu-hamburger"></span>Submeter</a></li>
-									<li><a href="<c:url value='/grupos/listar'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Avaliação</a></li>
+									<li><a href="<c:url value='/avaliacoes/index'/>"><span
+									class="glyphicon glyphicon-menu-hamburger"></span>Avaliações</a></li>
 
 						</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Conferencias <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<c:url value='/grupos/criar'/>"><span
+							<li><a href="<c:url value='/conferencia/form-input'/>"><span
 									class="glyphicon glyphicon-plus-sign"></span>Parametros</a></li>
-							<li><a href="<c:url value='/grupos/listar'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Definir Fases</a></li>
+							<li><a href="<c:url value='/fasesConferencia/form-input'/>"><span
+									class="glyphicon  glyphicon-plus-sign"></span>Definir Fases</a></li>
 									<li><a href="<c:url value='/fasesConferencia/form-input'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Inscrever-se</a></li>
+									class="glyphicon glyphicon-plus-sign"></span>Inscrever-se</a></li>
 									<li><a href="<c:url value='/conferencia/list'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Listar Conferências</a></li>
+									class="glyphicon glyphicon-list-alt"></span>Listar Conferencias</a></li>
 									<li><a href="<c:url value='/evento/list'/>"><span
-									class="glyphicon glyphicon-menu-hamburger"></span>Eventos da Conferência</a></li>
+									class="glyphicon glyphicon-list-alt"></span>Eventos da Conferencia</a></li>
 
 						</ul></li>
 						<ul class="nav navbar-nav">

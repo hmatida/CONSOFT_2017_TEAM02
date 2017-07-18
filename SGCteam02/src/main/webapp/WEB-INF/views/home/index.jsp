@@ -1,90 +1,173 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>SGC</title>
-    
-    <!-- bootstrap -->
-	<link rel="stylesheet"
-		href="<c:url value='/assets/css/bootstrap.min.css'/>">
-	<link rel="stylesheet"
-		href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
-	
-	<!-- style -->
-	<link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
-	<link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
-
-  </head>
-  <body>
-
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12"> 
-		<td> </td>
-		</div>
-		<div class="col-md-12" style="vertical-align: middle">
-			<h2 class="text-center">
-				Sistema de Gerenciamento de Confer�ncias
-			</h2>
-			<h3 class="text-center">
-				Acesso ao sistema
-			</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3">
-		</div>
-		<div class="col-md-6">
-			<form class="form-horizontal" role="form" action="/inicio">
-				<div class="form-group">
-					 
-					<label for="inputEmail3" class="col-sm-2 control-label">
-						Login
-					</label>
-					<div class="col-sm-10">
-						<input type="email" class="form-control" id="inputEmail3">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="inputPassword3" class="col-sm-2 control-label">
-						Senha
-					</label>
-					<div class="col-sm-10">
-						<input type="password" class="form-control" id="inputPassword3">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<div class="checkbox">
-							 
-							<label>
-								<input type="checkbox"> Lembrar
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						 
-						<button type="submit" class="btn btn-default">
-							Entrar
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="col-md-3">
-		</div>
-	</div>
-</div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib tagdir="/WEB-INF/tags/template" prefix="template"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<link rel="stylesheet"
+	href="<c:url value='/assets/css/bootstrap.min.css'/>">
+<link rel="stylesheet"
+	href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
+<link rel="stylesheet"
+	href="<c:url value='/assets/js/bootstrap.min.js'/>">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Welcome</title>
+
+</head>
+
+<body>
+
+	<!-- INICIO NAV (alterar pra include)-->
+
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#menu" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar">Forum</span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Página Inicial</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="menu"></div>
+	</div>
+	</nav>
+
+	<!-- FINAL NAV -->
+	<div class="container">
+		<header class="row">
+
+		<h1 class="basic-title">Bem Vindo ao Sistema de Gerenciamento de
+			Conferência</h1>
+
+		</header>
+		<div class="row">
+			<div role="main" class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Login</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"> <i
+								class="glyphicon glyphicon-user" style="width: auto"></i>
+							</span> <input id="txtUsuario" runat="server" type="text"
+								class="form-control" name="user" placeholder="Usuário"
+								required="" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"> <i
+								class="glyphicon glyphicon-lock" style="width: auto"></i>
+							</span> <input id="txtSenha" runat="server" type="password"
+								class="form-control" name="password" placeholder="Senha"
+								required="" />
+						</div>
+					</div>
+					<button id="btnLogin" runat="server" class="btn btn-default"
+						style="width: 100%">
+						ENTRAR<i class="glyphicon glyphicon-log-in"></i>
+					</button>
+				</div>
+			</div>
+
+
+
+			<aside role="complementary" class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">Cadastrar-se</div>
+
+					
+				<form class="form-group" action="cadastrar">
+					<!-- Text input-->
+
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Nome: </span> <input id="nome"
+								type="text" class="form-control" name="nome"
+								placeholder="seu nome" required="" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Sobrenome: </span> <input
+								id="sobrenome" type="text" class="form-control" name="sobrenome"
+								placeholder="seu sobrenome" required="" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">CPF: </span> <input id="cpf"
+								type="text" class="form-control" name="cpf"
+								placeholder="somente numeros" required="" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Login: </span> <input id="login"
+								type="text" class="form-control" name="login"
+								placeholder="Nome de usuário" required="" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">E-mail: </span> <input id="email"
+								type="text" class="form-control" name="email"
+								placeholder="seuemail@servicodeemail" required="" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Data de Nascimento: </span> <input
+								id="datanascimento" type="date" class="form-control"
+								name="datanascimento" placeholder="dd/mm/aaaa" required="" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Senha: </span> <input id="senha"
+								type="password" class="form-control" name="senha"
+								placeholder="minimo 6 digitos" required="" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Sexo: </span> <input type="radio"
+								name="sexo" id="rad-0" value="1" checked="checked" placeholder="masculino">
+							masculino <input type="radio" name="sexo" id="rad-1" value="2" placeholder="feminino">
+							feminino
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<button id="Cadastrar" name="Cadastrar" class="btn btn-success">Cadastrar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			</aside>
+
+
+
+		</div>
+	</div>
+
+	<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
+	<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
+	<script src="assets/js/scripts.js"></script>
+</body>
 </html>
