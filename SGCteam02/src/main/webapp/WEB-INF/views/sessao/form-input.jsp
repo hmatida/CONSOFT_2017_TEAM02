@@ -21,6 +21,16 @@
 			 	<option value=${conf.id}>${conf.nome_abre}</option>
 			 </c:forEach>	
 				</select>	
+				<div class=form-group>
+				<label for="conferencia" name="usuario">Usuario</label>
+					<select name="usuarios">
+						 <c:forEach items="${usuarios}" var="user">
+						 	<option value=${user.idUsuario}>${user.nome}</option>
+						 </c:forEach>	
+				</select>
+				</div>
+				
+				
 				<div class="form-group">	 
 					<label for="endereco">
 						Nome

@@ -8,7 +8,7 @@
 	<div class="row">
 	<div class="col-md-12">
 		<div class="container">
-			<h4> Fases cadastradas</h4>
+			<h4> Sessões cadastradas</h4>
 			<p> Listagem de Sessões já cadastrados:</p>
 			<table class="table table-striped">
 				<thead>

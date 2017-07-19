@@ -36,6 +36,10 @@ public class Sessao {
 	@ManyToOne
 	@JoinColumn(name="id_conferencia", referencedColumnName="id_conferencia")
 	private Conferencia conferencia;
+	
+	@ManyToOne
+	@JoinColumn(name="idUsuario", referencedColumnName="idUsuario")
+	private Usuario usuario;
 
 	
 	public Long getId() {
@@ -84,6 +88,14 @@ public class Sessao {
 
 	public void setConferencia(Conferencia conferencia) {
 		this.conferencia = conferencia;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	

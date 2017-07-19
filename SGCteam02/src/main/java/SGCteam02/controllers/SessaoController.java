@@ -25,11 +25,15 @@ public class SessaoController {
 	@Autowired
 	private ConferenciaDao conferencia;
 	
+	@Autowired
+	private UsuarioDao usuarioDao;
+	
 	@GetMapping("/list")
 	public ModelAndView list(){
 		ModelAndView mAV = 
 				new ModelAndView("sessao/list");
 		mAV.addObject("listSessao", sessaoDao.findAll());
+		mAV.addObject("usuarios", usuarioDao.findAll());
 		return mAV;
 	}
 	

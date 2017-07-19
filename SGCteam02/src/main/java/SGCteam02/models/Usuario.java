@@ -10,12 +10,12 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="Usuario")
+@Table(name="usuario")
 public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private long idUsuario;
+    private Long idUsuario;
 
 	private String nome;
 
@@ -41,20 +41,19 @@ public class Usuario {
 	private String senha;
 
 	@ManyToMany
-	@JoinColumn(name="idUsuario", referencedColumnName="idFuncao")
+	@JoinColumn(name="idFuncao", referencedColumnName="idFuncao")
 	private List<Funcao> func;
-
-
-	public Usuario(){
-		
-	}
 	
-
-	public long getId() {
+	@OneToMany(mappedBy="usuario")
+	private List<Sessao> sessao;
+	
+	
+	
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setId(long idUsuario) {
+	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
@@ -113,4 +112,25 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public List<Funcao> getFunc() {
+		return func;
+	}
+
+
+	public void setFunc(List<Funcao> func) {
+		this.func = func;
+	}
+
+
+	public List<Sessao> getSessao() {
+		return sessao;
+	}
+
+
+	public void setSessao(List<Sessao> sessao) {
+		this.sessao = sessao;
+	}
+	
+	
 }

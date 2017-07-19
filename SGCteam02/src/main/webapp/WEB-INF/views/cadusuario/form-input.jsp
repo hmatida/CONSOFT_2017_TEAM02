@@ -33,12 +33,6 @@
 							</div><br>
 							<div class="form-group">
 
-								<label class="col-xs-4" for="email"> E-mail: </label> <input class="col-xs-8"
-									type="text" class="form-control" id="email" name="email" />
-
-							</div><br>
-							<div class="form-group">
-
 								<label class="col-xs-4" for="dataNascimento">
 									dataNascimento: </label> <input class="col-xs-8" type="date" class="form-control"
 									id="dataNascimento" name="dataNascimento" />
