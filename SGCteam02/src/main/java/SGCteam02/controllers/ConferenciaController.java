@@ -57,4 +57,12 @@ public class ConferenciaController {
 		moAV.addObject("conferencia", confDao.findOne(id));
 		return moAV;
 	}
+	
+	@GetMapping("/listForConf")
+	public ModelAndView listForConf(){
+		ModelAndView mAV = 
+				new ModelAndView("conferencia/listForConf");
+		mAV.addObject("listConferencia",confDao.findAll());
+		return mAV;
+	}
 }
