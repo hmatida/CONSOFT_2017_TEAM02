@@ -67,7 +67,8 @@ public class SessaoController {
 	@GetMapping("/form-input")
 	public ModelAndView form(){
 		ModelAndView mAV = new ModelAndView("sessao/form-input");
-		mAV.addObject("conferencia", conferencia.findAll());	
+		mAV.addObject("conferencia", conferencia.findAll());
+		mAV.addObject("usuarios", usuarioDao.findAll());
 		return mAV;
 	}
 }
