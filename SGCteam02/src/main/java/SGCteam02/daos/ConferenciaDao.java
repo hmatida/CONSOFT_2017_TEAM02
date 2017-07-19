@@ -8,4 +8,5 @@ import SGCteam02.models.Conferencia;
 
 public interface ConferenciaDao extends CrudRepository<Conferencia, Long>{
 
+	
 }

@@ -1,5 +1,7 @@
 package SGCteam02.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +15,10 @@ public class Funcao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idFuncao;
 	private String nome;
+	
+	@ManyToMany(mappedBy="func")
+	private List<Usuario> users;
+	
 	
 	
 	public long getIdFuncao() {

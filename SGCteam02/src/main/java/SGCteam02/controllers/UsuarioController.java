@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import SGCteam02.daos.FuncaoDao;
 import SGCteam02.daos.UsuarioDao;
-import SGCteam02.models.*;
+import SGCteam02.models.Usuario;
 
 
 @Controller
@@ -23,10 +24,17 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioDao userDao;
 	
+	@Autowired
+	private FuncaoDao funcDao;
 	
+
 	@GetMapping("/form-input")
-	public String form(){
-		return "/cadusuario/form-input";
+	public ModelAndView form(){
+		ModelAndView mAV = new ModelAndView("cadusuario/form-input");
+		
+		mAV.addObject("funcao", funcDao.findAll());	
+		return mAV;
+	
 	}
 	
 	@PostMapping

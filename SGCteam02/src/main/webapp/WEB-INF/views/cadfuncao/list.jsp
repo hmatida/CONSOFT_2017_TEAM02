@@ -20,8 +20,9 @@
 						<td>Nome</td>	
 					</tr>
 					</thead>
-				<c:forEach items="${listFuncoes}" var="itens">
+				
 				<tr>
+					<c:forEach items=${funcoes} var="itens">
 					<td>${itens.idFuncao}</td>
 					<td>${itens.nome}</td>
 				

@@ -41,7 +41,8 @@ public class Usuario {
 	private String senha;
 
 	@ManyToMany
-	@JoinColumn(name="idFuncao", referencedColumnName="idFuncao")
+	@JoinTable(name="usuario_funcao", joinColumns = @JoinColumn(name="idusuario"),
+	inverseJoinColumns=@JoinColumn(name="idfuncao"))
 	private List<Funcao> func;
 	
 	@OneToMany(mappedBy="usuario")
