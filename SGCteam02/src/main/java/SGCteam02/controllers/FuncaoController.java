@@ -42,7 +42,7 @@ public class FuncaoController {
 	}
 	
 	@PostMapping
-	public ModelAndView save(@Valid Funcao func,	
+	public ModelAndView save(Funcao func,	
 			BindingResult bR){
 		
 		funcDao.save(func);

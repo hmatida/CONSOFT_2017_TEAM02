@@ -1,5 +1,7 @@
 package SGCteam02.controllers;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import SGCteam02.daos.FuncaoDao;
 import SGCteam02.daos.UsuarioDao;
+import SGCteam02.models.Funcao;
 import SGCteam02.models.Usuario;
 
 
@@ -38,10 +41,21 @@ public class UsuarioController {
 	}
 	
 	@PostMapping
-	public ModelAndView save(@Valid Usuario user,
+	public ModelAndView save(Usuario user, List<Funcao> idFuncao,
 			BindingResult bR){
 		
+		user.setFunc(idFuncao);
 		userDao.save(user);
 		return new ModelAndView("redirect:/cadusuario/list");
+	}
+	
+	
+	@GetMapping("/list")
+	public ModelAndView lista(){
+		ModelAndView mAV = 
+				new ModelAndView("cadusuario/list");
+		mAV.addObject("user", userDao.findAll());
+		return mAV;
+		
 	}
 }

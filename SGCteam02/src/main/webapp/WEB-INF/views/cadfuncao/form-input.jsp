@@ -11,20 +11,22 @@
 
 					<div class="col-md-6">
 						<form method="post" action="/cadfuncao">
-						<br>
+							<br>
 							<div class="form-group">
 
-								<label class="col-xs-4" for="nome"> Nome: </label> <input class="col-xs-8"
-									type="text" class="form-control" id="nome" name="nome" />
+								<label class="col-xs-4" for="nome"> Nome: </label> <input
+									class="col-xs-8" type="text" class="form-control" id="nome"
+									name="nome" />
 
-							</div><br>
-							
+							</div>
+							<br>
+
 							<button type="submit" class="btn btn-default">Salvar</button>
 						</form>
-						</div>
-						</div>
-
-	</div>
 					</div>
 				</div>
+
+			</div>
+		</div>
+	</div>
 </template:admin>

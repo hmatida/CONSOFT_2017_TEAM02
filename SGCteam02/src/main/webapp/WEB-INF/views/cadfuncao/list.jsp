@@ -4,10 +4,6 @@
 <%@taglib tagdir="/WEB-INF/tags/template" prefix="template" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <template:admin>
-
-<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
-<link rel="stylesheet" href="<c:url value='/assets/js/bootstrap.min.js'/>">
 <div class="cotainer">
 	<div class="row">
 	<div class="col-md-12">

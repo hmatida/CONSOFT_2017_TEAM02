@@ -24,7 +24,7 @@
 
 						</tr>
 					</thead>
-					<c:forEach items="${listUsuario}" var="itens">
+					<c:forEach items="${user}" var="itens">
 						<tr>
 							<td>${itens.nome}</td>
 							<td>${itens.sobrenome}</td>

@@ -1,6 +1,7 @@
 package SGCteam02.models;
 
 import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.*;
@@ -8,6 +9,8 @@ import javax.validation.constraints.*;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name="usuario")
@@ -28,27 +31,25 @@ public class Usuario {
 	private String email;
 
 	
-	@Column(name="DATA_NASCIMENTO")
+	@DateTimeFormat(iso=ISO.DATE)
 	private Date dataNascimento;
 
-	@Size(max = 255)
-	@Column(name="LOGIN", unique=true)
+
 	private String login;
 
 	
-	@Size(max = 10)
-	@Column(name="SENHA")
+
 	private String senha;
 
 	@ManyToMany
-	@JoinTable(name="usuario_funcao", joinColumns = @JoinColumn(name="idusuario"),
-	inverseJoinColumns=@JoinColumn(name="idfuncao"))
+	@JoinTable(name="usuario_funcao", joinColumns = @JoinColumn(name="idUsuario"),
+	inverseJoinColumns=@JoinColumn(name="idFuncao"))
 	private List<Funcao> func;
 	
 	@OneToMany(mappedBy="usuario")
 	private List<Sessao> sessao;
 	
-	
+	public Usuario(){}
 	
 	public Long getIdUsuario() {
 		return idUsuario;
