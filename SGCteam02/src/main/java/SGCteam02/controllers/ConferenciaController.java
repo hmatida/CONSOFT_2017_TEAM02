@@ -50,5 +50,19 @@ public class ConferenciaController {
 		return new ModelAndView ("redirect:/conferencia/list");
 	}
 	
+	@GetMapping("/update/{id}")
+	public ModelAndView update(@PathVariable("id") Long id){
+		
+		ModelAndView moAV = new ModelAndView("conferencia/form-input");
+		moAV.addObject("conferencia", confDao.findOne(id));
+		return moAV;
+	}
 	
+	@GetMapping("/listForConf")
+	public ModelAndView listForConf(){
+		ModelAndView mAV = 
+				new ModelAndView("conferencia/listForConf");
+		mAV.addObject("listConferencia",confDao.findAll());
+		return mAV;
+	}
 }
