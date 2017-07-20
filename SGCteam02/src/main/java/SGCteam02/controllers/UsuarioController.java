@@ -1,5 +1,7 @@
 package SGCteam02.controllers;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -11,8 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import SGCteam02.daos.FuncaoDao;
 import SGCteam02.daos.UsuarioDao;
-import SGCteam02.models.*;
+import SGCteam02.models.Funcao;
+import SGCteam02.models.Usuario;
 
 
 @Controller
@@ -23,17 +27,35 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioDao userDao;
 	
+	@Autowired
+	private FuncaoDao funcDao;
 	
+
 	@GetMapping("/form-input")
-	public String form(){
-		return "/cadusuario/form-input";
+	public ModelAndView form(){
+		ModelAndView mAV = new ModelAndView("cadusuario/form-input");
+		
+		mAV.addObject("funcao", funcDao.findAll());	
+		return mAV;
+	
 	}
 	
 	@PostMapping
-	public ModelAndView save(@Valid Usuario user,
+	public ModelAndView save(Usuario user, List<Funcao> idFuncao,
 			BindingResult bR){
 		
+		user.setFunc(idFuncao);
 		userDao.save(user);
 		return new ModelAndView("redirect:/cadusuario/list");
+	}
+	
+	
+	@GetMapping("/list")
+	public ModelAndView lista(){
+		ModelAndView mAV = 
+				new ModelAndView("cadusuario/list");
+		mAV.addObject("user", userDao.findAll());
+		return mAV;
+		
 	}
 }

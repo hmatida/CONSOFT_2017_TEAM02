@@ -11,59 +11,85 @@
 
 					<div class="col-md-6">
 						<form method="post" action="/cadusuario">
-						<br>
+							<br>
 							<div class="form-group">
 
-								<label class="col-xs-4" for="nome"> Nome: </label> <input class="col-xs-8"
-									type="text" class="form-control" id="nome" name="nome" />
+								<label class="col-xs-4" for="nome"> Nome: </label> <input
+									class="col-xs-8" type="text" class="form-control" id="nome"
+									name="nome" />
 
-							</div><br>
+							</div>
+							<br>
 							<div class="form-group">
 
-								<label class="col-xs-4" for="sobrenome"> Sobrenome: </label> <input class="col-xs-8"
-									type="text" class="form-control" id="sobrenome"
-									name="sobrenome" />
+								<label class="col-xs-4" for="sobrenome"> Sobrenome: </label> <input
+									class="col-xs-8" type="text" class="form-control"
+									id="sobrenome" name="sobrenome" />
 
-							</div><br>
+							</div>
+							<br>
 							<div class="form-group">
 
-								<label class="col-xs-4" for="CPF"> cpf: </label> <input class="col-xs-8"
-									type="text" class="form-control" id="cpf" name="cpf" />
+								<label class="col-xs-4" for="CPF"> cpf: </label> <input
+									class="col-xs-8" type="text" class="form-control" id="cpf"
+									name="cpf" />
 
-							</div><br>
+							</div>
+							<br>
 							<div class="form-group">
 
 								<label class="col-xs-4" for="dataNascimento">
-									dataNascimento: </label> <input class="col-xs-8" type="date" class="form-control"
-									id="dataNascimento" name="dataNascimento" />
+									dataNascimento: </label> <input class="col-xs-8" type="date"
+									class="form-control" id="dataNascimento" name="dataNascimento" />
 
-							</div><br>
+							</div>
+							
+							<br>
+							<div class="form-group">
+
+								<label class="col-xs-4" for="email">
+									e-mail: </label> <input class="col-xs-8" type="email"
+									class="form-control" id="email" name="email" />
+
+							</div>
+							
+							<br>
+							<div class="form-group">
+
+								<label class="col-xs-4" for="login"> Login: </label> <input
+									class="col-xs-8" type="text" class="form-control" id="login"
+									name="login" />
+
+							</div>
+							<br>
 
 							<div class="form-group">
 
-								<label class="col-xs-4" for="email"> E-mail: </label> <input class="col-xs-8"
-									type="email" class="form-control" id="email" name="email" />
+								<label class="col-xs-4" for="senha"> senha: </label> <input
+									class="col-xs-8" type="password" class="form-control"
+									id="senha" name="senha" />
 
-							</div><br>
+							</div>
+							<br>
 							<div class="form-group">
 
-								<label class="col-xs-4" for="login"> Login: </label> <input class="col-xs-8"
-									type="text" class="form-control" id="login" name="login" />
+								<label class="col-xs-4" for="funcao"> Funcao: </label>
+								<div class="checkbox">
+								
+									<c:forEach items="${funcao}" var="itens">
+									<input type="checkbox" name=${itens.idFuncao} value=${itens.idFuncao}>${itens.nome}<br>
 
-							</div><br>
+									</c:forEach>
+								</div>
 
-							<div class="form-group">
-
-								<label class="col-xs-4" for="senha"> senha: </label> <input class="col-xs-8"
-									type="password" class="form-control" id="senha" name="senha" />
-
-							</div><br>
+							</div>
+							<br>
 							<button type="submit" class="btn btn-default">Salvar</button>
 						</form>
-						</div>
-						</div>
-
-	</div>
 					</div>
 				</div>
+
+			</div>
+		</div>
+	</div>
 </template:admin>

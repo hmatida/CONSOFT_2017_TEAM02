@@ -37,12 +37,12 @@ public class FuncaoController {
 	public ModelAndView list(){
 		ModelAndView mAV = 
 				new ModelAndView("cadfuncao/list");
-		mAV.addObject("listFuncoes", funcDao.findAll());
+		mAV.addObject("funcoes", funcDao.findAll());
 		return mAV;
 	}
 	
 	@PostMapping
-	public ModelAndView save(@Valid Funcao func,
+	public ModelAndView save(Funcao func,	
 			BindingResult bR){
 		
 		funcDao.save(func);
