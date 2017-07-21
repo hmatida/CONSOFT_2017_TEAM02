@@ -1,6 +1,7 @@
 package SGCteam02.models;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class Usuario {
 	@ManyToMany
 	@JoinTable(name="usuario_funcao", joinColumns = @JoinColumn(name="idUsuario"),
 	inverseJoinColumns=@JoinColumn(name="idFuncao"))
-	private List<Funcao> func;
+	private List<Funcao> func = new ArrayList();
 	
 	@OneToMany(mappedBy="usuario")
 	private List<Sessao> sessao;
