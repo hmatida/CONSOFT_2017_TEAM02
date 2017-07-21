@@ -44,10 +44,18 @@
 									<td>${conf.n_participantes}</td>
 									<td>
 										<div class="btn-group pull-right">
-											<a class="btn btn-sm btn-primary"
-												action="/conferencia/update"
+											<a class="delete btn btn-sm btn-primary"
+												action="/conferencia/listForConf"
+												href=/conferencia/listForConf/${conf.id}><i
+												class="glyphicon glyphicon-eye-open"></i> Detalhes</a>
+										</div>
+									</td>
+									<td>
+										<div class="btn-group pull-right">
+											<a class="btn btn-sm btn-warning"
+												action="/conferencia/listForConf"
 												href=/conferencia/update/${conf.id}><i
-												class="glyphicon glyphicon-pencil"></i>Editar</a>
+												class="glyphicon glyphicon-pencil"></i> Editar</a>
 										</div>
 									</td>
 									<td>

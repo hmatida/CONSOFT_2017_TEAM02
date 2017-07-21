@@ -36,7 +36,7 @@
 							<div class="col-md-6">
 								<label for="nome Organizador">Nome do Organizador </label> <input
 									type="text" class="form-control" id="nome_organizador"
-									name="nome_organizado" />
+									name="nome_organizador" />
 							</div>
 						</div>
 						

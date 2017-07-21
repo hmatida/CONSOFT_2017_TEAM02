@@ -58,11 +58,11 @@ public class ConferenciaController {
 		return moAV;
 	}
 	
-	@GetMapping("/listForConf")
-	public ModelAndView listForConf(){
+	@GetMapping("/listForConf/{id}")
+	public ModelAndView listForConf(@PathVariable("id") Long id){
 		ModelAndView mAV = 
 				new ModelAndView("conferencia/listForConf");
-		mAV.addObject("listConferencia",confDao.findAll());
+		mAV.addObject("conferencia",confDao.findOne(id));
 		return mAV;
 	}
 }

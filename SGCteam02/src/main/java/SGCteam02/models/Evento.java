@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -44,6 +45,10 @@ public class Evento {
 	@JoinColumn(name="id_local", referencedColumnName="id_local")
 	@ManyToOne
 	private Local local;
+	
+	private String tp_cobranca;
+	private String descricao;
+	private double preco;
 
 
 	public Evento() {
@@ -118,5 +123,35 @@ public class Evento {
 	public void setLocal(Local local) {
 		this.local = local;
 	}
+
+
+
+	public String getTp_cobranca() {
+		return tp_cobranca;
+	}
+
+
+	public void setTp_cobranca(String tp_cobranca) {
+		this.tp_cobranca = tp_cobranca;
+	}
+
+
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+
+	public double getPreco() {
+		return preco;
+	}
+
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+	
 	
 }

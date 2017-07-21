@@ -6,25 +6,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Funcao {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idFuncao;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long idFuncao;
 	private String nome;
 	
-	@ManyToMany(mappedBy="func")
-	private List<Usuario> users;
+	@ManyToMany
+	@JoinColumn(name="idUsuario", referencedColumnName="idUsuario")
+	private List<Usuario> usuarios;
 	
-	
-	
-	public long getIdFuncao() {
+	public Long getIdFuncao() {
 		return idFuncao;
 	}
-	public void setIdFuncao(long idFuncao) {
+	public void setIdFuncao(Long idFuncao) {
 		this.idFuncao = idFuncao;
 	}
 	public String getNome() {
@@ -33,5 +33,6 @@ public class Funcao {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
+	
 }

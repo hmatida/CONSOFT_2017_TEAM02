@@ -30,14 +30,13 @@ public class UsuarioController {
 	@Autowired
 	private FuncaoDao funcDao;
 	
-
+	
 	@GetMapping("/form-input")
 	public ModelAndView form(){
-		ModelAndView mAV = new ModelAndView("cadusuario/form-input");
 		
-		mAV.addObject("funcao", funcDao.findAll());	
+		ModelAndView mAV = new ModelAndView("cadusuario/form-input");
+		mAV.addObject("funcaoList", funcDao.findAll());
 		return mAV;
-	
 	}
 	
 	@PostMapping

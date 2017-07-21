@@ -50,7 +50,9 @@ public class Usuario {
 	@OneToMany(mappedBy="usuario")
 	private List<Sessao> sessao;
 	
-	public Usuario(){}
+	@ManyToOne
+	@JoinColumn(name="id_conferencia", referencedColumnName="id_conferencia")
+	private Conferencia conferencia;
 	
 	public Long getIdUsuario() {
 		return idUsuario;
