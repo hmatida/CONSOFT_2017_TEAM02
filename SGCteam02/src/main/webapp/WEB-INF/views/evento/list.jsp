@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				<div class="container">
 					<h4>Eventos por Conferencia</h4>
-					<p>Listagem de conferencia já cadastradas:</p>
+					<p>Listagem de conferencia jï¿½ cadastradas:</p>
 
 					<form method="post" action="/evento/confList">
 						<label for="conferencia" name="conferencia">Selecione a
@@ -25,12 +25,12 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<td>Título</td>
+								<td>Tï¿½tulo</td>
 								<td>Tipo evento</td>
-								<td>Início</td>
-								<td>Endereço</td>
+								<td>Inï¿½cio</td>
+								<td>Endereï¿½o</td>
 								<td>Bairro</td>
-								<td>Número</td>
+								<td>Nï¿½mero</td>
 								<td>Cep</td>
 								<td>Sala</td>
 							</tr>
@@ -51,11 +51,12 @@
 								<td>
 									<div class="btn-group pull-right">
 										<a class="btn btn-sm btn-primary" action="/evento/update"
-											href=/evento/update/${conf.id}><i
+											href=/evento/update/${even.id}><i
 											class="glyphicon glyphicon-pencil"></i>Editar</a>
 								</td>
 								<td><a class="delete btn btn-sm btn-danger"
-									action="/evento/delete" href=/evento/delete/${conf.id}><i
+									action="/evento/delete"
+									href=/evento/delete/${even.id}><i
 										class="glyphicon glyphicon-remove"></i> Excluir</a></td>
 
 								</div>

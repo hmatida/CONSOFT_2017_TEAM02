@@ -40,15 +40,15 @@
 						
 						<div class="col-md-4 form-group">
 						<label for="tp_cobranca"> Tipo cobrança: </label>
-						<select class="form-control" id="tp_cobranca" name="tp_cobranca">
-							  <option value="in">Inclusa na conferência</option>
+						<select class="form-control" id="tp_cobranca" name="tp_cobranca" onKeyUp="Teste()">
+							  <option value="in">Inclusa na conferencia</option>
 							  <option value="nin">À parte</option>
 							</select>
 						</div>
 						<div class="form-group">	
 							<div class="col-md-2 form-group">
 								<label for="preco"> Preço </label> <label>
-								<input type="number" step="0.01" class="form-control" id="preo"
+								<input type="number" step="0.01" class="form-control" id="preco"
 								name="preco" placeholder="$"/>
 							</label>
 							</div>

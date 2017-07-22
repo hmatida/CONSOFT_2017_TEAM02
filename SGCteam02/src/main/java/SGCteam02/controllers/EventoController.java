@@ -49,7 +49,7 @@ public class EventoController {
 	@GetMapping("/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id){	
 		eventoDao.delete(id);
-		return new ModelAndView ("redirect:/evento/list1");
+		return new ModelAndView ("redirect:/evento/list");
 	}
 	
 	@GetMapping("/update/{id}")
