@@ -32,7 +32,14 @@ public class Conferencia {
 	private String url;
 	private String email;
 	private String emailRetorno;
+	private double preco;
 	
+	public double getPreco() {
+		return preco;
+	}
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 	private String moeda;
 	private int numMaxParticipantes;
 	

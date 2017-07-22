@@ -44,13 +44,13 @@
 
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="E-mail">E-mail:</label> <input type="mail"
+								<label for="E-mail">E-mail:</label> <input type="email"
 									class="form-control" id="email" name="email" />
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="E-mail">E-mail de retorno:</label> <input type="mail"
+								<label for="E-mail">E-mail de retorno:</label> <input type="email"
 									class="form-control" id="emailRetorno" name="emailRetorno" />
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="web">web:</label> <input type="text"
+								<label for="web">web:</label> <input type="url"
 									class="form-control" id="web" name="url" />
 							</div>
 						</div>
@@ -103,7 +103,7 @@
 
 						<div class="form-group">
 							<div class="col-md-2">
-								<label for="Preco">Preço:</label> <input type="number"
+								<label for="Preco">Preço:</label> <input type="number" "
 									class="form-control" id="preco"  name="preco" placeholder="apenas numero"/>
 							</div>
 

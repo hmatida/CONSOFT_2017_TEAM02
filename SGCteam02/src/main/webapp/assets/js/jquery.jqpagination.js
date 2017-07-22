@@ -427,3 +427,5 @@ if (!console) {
 	console.error	= func;
 
 }
+
+
