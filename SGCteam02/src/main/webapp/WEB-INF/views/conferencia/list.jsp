@@ -4,7 +4,6 @@
 <%@taglib tagdir="/WEB-INF/tags/template" prefix="template"%>
 <template:admin>
 
-	<body>
 	<div>
 		<div class="cotainer">
 			
@@ -26,7 +25,7 @@
 									<td>E-mail</td>
 									<td>E-mail retorno</td>
 									<td>Moeda</td>
-									<td>Número de Participantes</td>
+									<td>Nº Max de Partic</td>
 								</tr>
 							</thead>
 							<c:forEach items="${listConferencia}" var="conf">
@@ -37,11 +36,11 @@
 									<td>${conf.sub_tit}</td>
 									<td>${conf.sub_tit_sec}</td>
 									<td>${conf.url}</td>
-									<td>${conf.cidade}</td>
+									
 									<td>${conf.email}</td>
-									<td>${conf.email_ret}</td>
+									<td>${conf.emailRetorno}</td>
 									<td>${conf.moeda}</td>
-									<td>${conf.n_participantes}</td>
+									<td>${conf.numMaxParticipantes}</td>
 									<td>
 										<div class="btn-group pull-right">
 											<a class="delete btn btn-sm btn-primary"
@@ -82,5 +81,5 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/scripts.js"></script>
 
-	</body>
+
 </template:admin>

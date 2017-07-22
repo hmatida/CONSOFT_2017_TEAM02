@@ -30,11 +30,11 @@ public class Conferencia {
 	private String sub_tit;
 	private String sub_tit_sec;
 	private String url;
-	private String cidade;
 	private String email;
-	private String email_ret;
+	private String emailRetorno;
+	
 	private String moeda;
-	private int n_participantes;
+	private int numMaxParticipantes;
 	
 	@Column
 	@DateTimeFormat(iso=ISO.DATE)
@@ -100,12 +100,7 @@ public class Conferencia {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public String getCidade() {
-		return cidade;
-	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -113,10 +108,10 @@ public class Conferencia {
 		this.email = email;
 	}
 	public String getEmail_ret() {
-		return email_ret;
+		return emailRetorno;
 	}
-	public void setEmail_ret(String email_ret) {
-		this.email_ret = email_ret;
+	public void setEmail_ret(String emailRetorno) {
+		this.emailRetorno = emailRetorno;
 	}
 	public String getMoeda() {
 		return moeda;
@@ -125,10 +120,10 @@ public class Conferencia {
 		this.moeda = moeda;
 	}
 	public int getN_participantes() {
-		return n_participantes;
+		return numMaxParticipantes;
 	}
-	public void setN_participantes(int n_participantes) {
-		this.n_participantes = n_participantes;
+	public void setN_participantes(int numMaxParticipantes) {
+		this.numMaxParticipantes = numMaxParticipantes;
 	}
 	public List<FasesConfecencia> getFasesConf() {
 		return fasesConf;
@@ -157,6 +152,18 @@ public class Conferencia {
 	}
 	public void setParticipantes(List<Usuario> participantes) {
 		this.participantes = participantes;
+	}
+	public String getEmailRetorno() {
+		return emailRetorno;
+	}
+	public void setEmailRetorno(String emailRetorno) {
+		this.emailRetorno = emailRetorno;
+	}
+	public int getNumMaxParticipantes() {
+		return numMaxParticipantes;
+	}
+	public void setNumMaxParticipantes(int numMaxParticipantes) {
+		this.numMaxParticipantes = numMaxParticipantes;
 	}
 }
 

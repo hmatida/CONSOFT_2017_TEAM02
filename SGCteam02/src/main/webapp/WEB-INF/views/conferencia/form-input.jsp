@@ -12,7 +12,7 @@
 				<div class="col-md-12">
 
 
-					<form method="post" action="/conferencia">						
+					<form method="post" action="/conferencia">
 						<div class="form-group">
 							<div class="col-md-6">
 								<label for="Nome">Nome: </label> <input type="text"
@@ -20,12 +20,14 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-md-6">
-								<label for="Numero Part">Nº Participantes</label> <input type="number"
-									class="form-control" id="n_participantes" name="n_participantes" />
+							<div class="col-md-3">
+								<label for="Numero Part">Nº Máximo de Participantes</label> <input
+									type="number" class="form-control" id="numMaxParticipantes"
+									name="numMaxParticipantes" />
 							</div>
+							
 						</div>
-						
+
 						<div class="form-group">
 							<div class="col-md-6">
 								<label for="abreviacao">Abreviação </label> <input type="text"
@@ -39,11 +41,17 @@
 									name="nome_organizador" />
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="E-mail">E-mail:</label> <input type="text"
+								<label for="E-mail">E-mail:</label> <input type="mail"
 									class="form-control" id="email" name="email" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-6">
+								<label for="E-mail">E-mail de retorno:</label> <input type="mail"
+									class="form-control" id="emailRetorno" name="emailRetorno" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -53,7 +61,7 @@
 									name="dataEvento" />
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<div class="col-md-12">
 								<label for="titulo evento">Titulo do Evento:</label> <input
@@ -62,7 +70,7 @@
 							</div>
 
 						</div>
-						
+
 						<div class="form-group">
 							<div class="col-md-12">
 								<label for="subtitulo evento">Subtitulo do Evento:</label> <input
@@ -71,58 +79,46 @@
 							</div>
 
 						</div>
-						
+
 						<div class="form-group">
 							<div class="col-md-6">
 								<label for="web">web:</label> <input type="text"
 									class="form-control" id="web" name="url" />
 							</div>
 						</div>
+
+						<div class="row">
+							<div class="col-xs-3">
+								<div class="form-group">
+									<label for="moeda">moeda:</label>								
+									<select class="selectpicker form-control" name="moeda">
+										<option>real</option>
+										<option>dolar</option>
+										<option>euro</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+
 						<div class="form-group">
-							<div class="col-md-6">
-								<label for="Cidade">Cidade:</label> <input type="text"
-									class="form-control" id="cidade" name="cidade" />
+							<div class="col-md-2">
+								<label for="Preco">Preço:</label> <input type="number"
+									class="form-control" id="preco"  name="preco" placeholder="apenas numero"/>
 							</div>
 
 						</div>
-					
-						<div class="form-group" >
-							<div class="col-md-4">
-								<label for="Moeda" name="moeda">Moeda</label> 
-								<select name="moeda">
-									<option value="real">real</option>
-									<option value="dolar">dolar</option>
-									<option value="euro">euro</option>
-									
-								</select>
-							</div>
-
-						</div>
+						<br>
 						<div class="form-group">
-							<div class="col-md-4">
-								<label for="Preco">Preço:</label> <input type="text"
-									class="form-control" id="preco" />
-							</div>
-
-						</div>
-						<div class="form-group">
-							<div class="col-md-4">
-								<label for="Taxa">Taxa Fatura:</label> <input type="text"
-									class="form-control" id="taxa" />
-							</div>
-
-						</div><br>
-						<div class="form-group">
-						<div class="col-md-6">
-								
-							</div>
+							<div class="col-md-6"></div>
 							<div class="col-md-12">
-								<button type="submit" class="btn btn-default">
-									Salvar
-								</button>
+								<button type="submit" class="btn btn-default">Salvar</button>
 							</div>
 
 						</div>
+					</form>
+				</div>
 			</div>
+		</div>
 		</div>
 </template:admin>

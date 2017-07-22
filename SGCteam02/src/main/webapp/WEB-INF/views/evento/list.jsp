@@ -1,6 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib tagdir="/WEB-INF/tags/template" prefix="template"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <template:admin>
 	<div class="cotainer">
 		<div class="row">
@@ -38,8 +39,10 @@
 							<tr>
 								<td>${even.titulo}</td>
 								<td>${even.tipo}</td>
-								<td>${even.dataInicio.time}</td>
-								<td>${even.dataFim.time}</td>
+								<td><fmt:formatDate value="${even.dataInicio.time}"
+										pattern="dd/MM/aaaa" /></td>
+								<td><fmt:formatDate value="${even.dataFim.time}"
+										pattern="dd/MM/aaaa" /></td>
 								<td>${even.local.endereco}</td>
 								<td>${even.local.bairro}</td>
 								<td>${even.local.numero}</td>
@@ -52,8 +55,7 @@
 											class="glyphicon glyphicon-pencil"></i>Editar</a>
 								</td>
 								<td><a class="delete btn btn-sm btn-danger"
-									action="/evento/delete"
-									href=/evento/delete/${conf.id}><i
+									action="/evento/delete" href=/evento/delete/${conf.id}><i
 										class="glyphicon glyphicon-remove"></i> Excluir</a></td>
 
 								</div>
