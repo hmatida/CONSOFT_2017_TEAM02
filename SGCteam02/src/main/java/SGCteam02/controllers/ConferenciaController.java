@@ -65,4 +65,12 @@ public class ConferenciaController {
 		mAV.addObject("conferencia",confDao.findOne(id));
 		return mAV;
 	}
+	
+	@GetMapping("/detail/{id}")
+	public ModelAndView detail(@PathVariable("id") Long id){
+		ModelAndView mAV = 
+				new ModelAndView("conferencia/detail-conf");
+		mAV.addObject("conf",confDao.findOne(id));
+		return mAV;
+	}
 }
