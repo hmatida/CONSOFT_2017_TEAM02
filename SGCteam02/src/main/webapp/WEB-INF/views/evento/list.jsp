@@ -8,35 +8,35 @@
 			<div class="col-md-12">
 				<div class="container">
 					<h4>Eventos por Conferencia</h4>
-					<p>Listagem de conferencia jï¿½ cadastradas:</p>
-
-					<form method="post" action="/evento/confList">
+					<p>Listagem de evento por conferência:</p>
+					<form method="post" action="/eventos/list2/">
 						<label for="conferencia" name="conferencia">Selecione a
-							conferencia</label> <select class="col-md-6" name="conferencia">
+							conferencia</label> 
+							<select class="col-md-8 form-control" name="conferencia" id="idConfBusca">
+								<option value="">Todos</option>
 							<c:forEach items="${conferencia}" var="conf">
-								<option value=${conf.id}>${conf.nome_abre}</option>
+								<option value=${conf.nome}>${conf.nome}</option>
 							</c:forEach>
 						</select>
-						<button type="submit" class="btn btn-default"
-							action="/evento/confList" href=/evento/confList/${conf.id}>
-							Buscar</button>
 					</form>
-
-					<table class="table table-striped">
+					<table class="table table-striped" id="listaEventos">
 						<thead>
 							<tr>
-								<td>Tï¿½tulo</td>
+								<td>Título</td>
 								<td>Tipo evento</td>
-								<td>Inï¿½cio</td>
-								<td>Endereï¿½o</td>
+								<td>Início</td>
+								<td>Fim</td>
+								<td>Endereço</td>
 								<td>Bairro</td>
-								<td>Nï¿½mero</td>
+								<td>Número</td>
 								<td>Cep</td>
 								<td>Sala</td>
 							</tr>
 						</thead>
+						<tbody>
 						<c:forEach items="${eventos}" var="even">
 							<tr>
+								<td class="hidden">${even.conferencia.nome}</td>
 								<td>${even.titulo}</td>
 								<td>${even.tipo}</td>
 								<td><fmt:formatDate value="${even.dataInicio.time}"
@@ -63,6 +63,7 @@
 								</td>
 							</tr>
 						</c:forEach>
+						</tbody>	
 					</table>
 					<div class="panel-footer">
 						<a class="btn btn-sm btn-success" href=/evento/form-input>Adicionar</a>

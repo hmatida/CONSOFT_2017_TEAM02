@@ -1,5 +1,7 @@
 package SGCteam02.controllers;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -35,6 +37,7 @@ public class EventoController {
 		ModelAndView mAV = 
 				new ModelAndView("evento/list");
 		mAV.addObject("eventos", eventoDao.findAll());
+		mAV.addObject("conferencia", conferenciaDao.findAll());
 		return mAV;
 	}
 	
