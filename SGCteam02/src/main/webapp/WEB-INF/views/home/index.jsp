@@ -70,11 +70,11 @@
 								class="form-control" name="password" placeholder="Senha"
 								required="" />
 						</div>
-					</div>
+					</div>					<a href=/inicio>
 					<button id="btnLogin" runat="server" class="btn btn-default"
 						style="width: 100%">
 						ENTRAR<i class="glyphicon glyphicon-log-in"></i>
-					</button>
+					</button>					</a>
 				</div>
 			</div>
 
