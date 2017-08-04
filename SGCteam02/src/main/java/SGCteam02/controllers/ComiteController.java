@@ -17,7 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import SGCteam02.daos.ComiteDao;
 import SGCteam02.daos.ConferenciaDao;
+import SGCteam02.daos.UsuarioDao;
 import SGCteam02.models.Comite;
+import SGCteam02.models.Usuario;
 
 
 @Controller
@@ -28,6 +30,9 @@ public class ComiteController {
 	
 	@Autowired
 	private ComiteDao comiteDao;
+	
+	@Autowired
+	private UsuarioDao usuarioDao;
 
 	@Autowired
 	private ConferenciaDao conferencia;
@@ -35,6 +40,13 @@ public class ComiteController {
 	@PostMapping
 	public ModelAndView save(@Valid Comite comite,
 			BindingResult bR){
+		comiteDao.save(comite);
+		return new ModelAndView("redirect:/comite/list");
+	}
+	
+	@PostMapping("/participante/{id}")
+	public ModelAndView save2(@PathVariable Long id, @Valid Comite comite){
+		comite.setId(id);
 		comiteDao.save(comite);
 		return new ModelAndView("redirect:/comite/list");
 	}
@@ -56,7 +68,15 @@ public class ComiteController {
 	@GetMapping("/form-input")
 	public ModelAndView form(){
 		ModelAndView mAV = new ModelAndView("comite/form-input");
-		mAV.addObject("comite", conferencia.findAll());	
+		mAV.addObject("conferencia", conferencia.findAll());	
+		return mAV;
+	}
+	
+	@GetMapping("/form-input_partc/{id}")
+	public ModelAndView form2(@PathVariable("id") Long id){
+		ModelAndView mAV = new ModelAndView("comite/form-input_partc");
+		mAV.addObject("comite", comiteDao.findOne(id));
+		mAV.addObject("usuarios", usuarioDao.findAll());
 		return mAV;
 	}
 

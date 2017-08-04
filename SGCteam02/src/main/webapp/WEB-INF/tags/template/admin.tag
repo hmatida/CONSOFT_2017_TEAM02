@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>SGC</title>
 
@@ -44,12 +43,12 @@
 					
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Grupos <span class="caret"></span></a>
+						aria-expanded="false">Comitê <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="<c:url value='/grupos/criar'/>"><span
-									class="glyphicon glyphicon-plus-sign"></span> Criar Grupos</a></li>
-							<li><a href="<c:url value='/grupos/listar'/>"><span
-									class="glyphicon glyphicon-list-alt"></span>Lista Grupos</a></li>
+							<li><a href="/comite/form-input"><span
+									class="glyphicon glyphicon-plus-sign"></span> Criar comitê</a></li>
+							<li><a href="/comite/list"><span
+									class="glyphicon glyphicon-list-alt"></span> Listar comitê</a></li>
 
 						</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -57,11 +56,13 @@
 						aria-expanded="false">Gerenciar <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/cadusuario/list'/>"><span
-									class="glyphicon glyphicon-list-alt"></span>Usuário</a></li>
+									class="glyphicon glyphicon-list-alt"></span> Usuário</a></li>
 							<li><a href="<c:url value='/cadgrupo/list'/>"><span
-									class="glyphicon glyphicon-list-alt"></span>Grupos</a></li>
+									class="glyphicon glyphicon-list-alt"></span> Grupos</a></li>
 									<li><a href="<c:url value='/revisoes/list'/>"><span
-									class="glyphicon glyphicon-list-alt"></span>Revisões</a></li>
+									class="glyphicon glyphicon-list-alt"></span > Revisões</a></li>
+									<li><a href="<c:url value='/cadlocal/list'/>"><span
+									class="glyphicon glyphicon-list-alt"></span> Locais</a></li>
 
 						</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -78,15 +79,15 @@
 						</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Conferencias <span class="caret"></span></a>
+						aria-expanded="false">Param Conferencias <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="<c:url value='/conferencia/form-input'/>"><span
-									class="glyphicon glyphicon-plus-sign"></span>Parametros</a></li>
+									class="glyphicon glyphicon-plus-sign"></span>Cadastrar</a></li>
 							<li><a href="<c:url value='/fasesConferencia/form-input'/>"><span
-									class="glyphicon  glyphicon-plus-sign"></span>Definir Fases</a></li>
-									<li><a href="<c:url value='/fasesConferencia/form-input'/>"><span
-									class="glyphicon glyphicon-plus-sign"></span>Inscrever-se</a></li>
-									<li><a href="<c:url value='/conferencia/list'/>"><span
+									class="glyphicon  glyphicon-plus-sign"></span>Cadastrar Fases</a></li>
+									<li><a href="<c:url value='/sessao/form-input'/>"><span
+									class="glyphicon glyphicon-plus-sign"></span>Cad Sessão</a></li>
+									<li><a href="<c:url value='/conferencia/list'/>"><span									
 									class="glyphicon glyphicon-list-alt"></span>Listar Conferencias</a></li>
 									<li><a href="<c:url value='/evento/list'/>"><span
 									class="glyphicon glyphicon-list-alt"></span>Eventos da Conferencia</a></li>

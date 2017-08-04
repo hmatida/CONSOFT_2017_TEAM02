@@ -16,14 +16,15 @@
 		<div class="col-md-8">
 			<form method="post" action="/sessao">
 			<label for="conferencia" name="conferencia">Conferencia</label>
-			 <select name="conferencia">
+			 <select name="conferencia" class="form-control">
 			 <c:forEach items="${conferencia}" var="conf">
 			 	<option value=${conf.id}>${conf.nome_abre}</option>
 			 </c:forEach>	
 				</select>	
+				<br>
 				<div class=form-group>
 				<label for="conferencia" name="usuario">Usuario</label>
-					<select name="usuarios">
+					<select name="usuarios" class="form-control">
 						 <c:forEach items="${usuarios}" var="user">
 						 	<option value=${user.idUsuario}>${user.nome}</option>
 						 </c:forEach>	
@@ -37,7 +38,7 @@
 					</label>
 					<input type="text" class="form-control" id="nomeDaSessao" name="nomeDaSessao" />
 					<div class="form-group">
-					 
+					 <br>
 					<label for="numero">
 						Abreviação
 					</label>
@@ -60,8 +61,9 @@
 					<input type="date" class="form-control" id="fim" name="fim"/>
 				</label>
 				</div>
+				<br>
 				<button type="submit" class="btn btn-default">
-					Submit
+					Salvar
 				</button>
 			</form>
 		</div>

@@ -30,7 +30,7 @@
 										<div class="btn-group pull-right">
 											<a class="btn btn-sm btn-primary"
 												action="/fasesConferencia/update"
-												href=/fasesConferencia/update/${fases.id}>Editar</a> <a
+												href=/fasesConferencia/update/${fases.id}> Editar</a> <a
 												class="delete btn btn-sm btn-danger"
 												action="/fasesConferencia/delete"
 												href=/fasesConferencia/delete/${fases.id}> Excluir</a>

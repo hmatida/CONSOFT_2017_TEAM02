@@ -37,24 +37,17 @@
 									pattern="dd/MM/yyyy" /></td>
 							<td>${conf.numMaxParticipantes}</td>
 							<td>
-							<div class="btn-group pull-right">
-									<a class="btn btn-sm btn-warning"
+							<div class="btn-group pull-right" role="group">
+									<a class="btn btn-sm btn-info"
 										action="/conferencia/listForConf"
 										href=/conferencia/detail/${conf.id}><i
-										class="glyphicon glyphicon-pencil"></i> Detalhes</a>
-								</div>
-								
-							</td>
-							<td>
-								<div class="btn-group pull-right">
+										class="glyphicon glyphicon-eye-open"></i> Detalhes</a>
+						
 									<a class="btn btn-sm btn-warning"
 										action="/conferencia/listForConf"
 										href=/conferencia/update/${conf.id}><i
 										class="glyphicon glyphicon-pencil"></i> Editar</a>
-								</div>
-							</td>
-							<td>
-								<div class="btn-group pull-right">
+			
 									<a class="delete btn btn-sm btn-danger"
 										action="/conferencia/delete"
 										href=/conferencia/delete/${conf.id}><i

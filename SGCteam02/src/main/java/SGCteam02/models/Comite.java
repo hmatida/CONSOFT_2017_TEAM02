@@ -20,7 +20,11 @@ public class Comite {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private int nroParticipantes;
+	private String nome;
+	
+	private int nroMaxParticipantes;
+	
+	private int participantes;
 	
 	private ArrayList<Usuario> usuarios;
 	
@@ -48,17 +52,6 @@ public class Comite {
 		this.conferencia = conferencia;
 	}
 
-
-	public int getNroParticipantes() {
-		return nroParticipantes;
-	}
-
-
-	public void setNroParticipantes(int nroParticipantes) {
-		this.nroParticipantes = nroParticipantes;
-	}
-
-
 	public ArrayList<Usuario> getUsuarios() {
 		return usuarios;
 	}
@@ -67,4 +60,40 @@ public class Comite {
 	public void setUsuarios(ArrayList<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public int getNroMaxParticipantes() {
+		return nroMaxParticipantes;
+	}
+
+
+	public void setNroMaxParticipantes(int nroMaxParticipantes) {
+		this.nroMaxParticipantes = nroMaxParticipantes;
+	}
+
+
+	public int getParticipantes() {
+		return participantes;
+	}
+
+
+	public void setParticipantes(int participantes) {
+		this.participantes = participantes;
+	}
+	
+	public void addParticipantes(Usuario usuario){
+		this.usuarios.add(usuario);
+		participantes=participantes++;
+	}
+
 }

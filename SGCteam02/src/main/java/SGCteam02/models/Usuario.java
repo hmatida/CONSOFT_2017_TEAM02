@@ -31,9 +31,9 @@ public class Usuario {
 
 	private String email;
 
-	
+	@Column
 	@DateTimeFormat(iso=ISO.DATE)
-	private Date dataNascimento;
+	private Calendar dataNascimento;
 
 
 	private String login;
@@ -94,12 +94,12 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public Date getDataNascimento() {
-		return dataNascimento;
+	public Conferencia getConferencia() {
+		return conferencia;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setConferencia(Conferencia conferencia) {
+		this.conferencia = conferencia;
 	}
 
 	public String getLogin() {
@@ -135,6 +135,14 @@ public class Usuario {
 
 	public void setSessao(List<Sessao> sessao) {
 		this.sessao = sessao;
+	}
+
+	public Calendar getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Calendar dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	
 	

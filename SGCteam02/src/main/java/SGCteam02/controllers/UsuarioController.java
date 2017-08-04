@@ -40,10 +40,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping
-	public ModelAndView save(Usuario user, List<Funcao> idFuncao,
-			BindingResult bR){
-		
-		user.setFunc(idFuncao);
+	public ModelAndView save(@Valid Usuario user, BindingResult bR){
 		userDao.save(user);
 		return new ModelAndView("redirect:/cadusuario/list");
 	}

@@ -52,14 +52,13 @@
 									<div class="btn-group pull-right">
 										<a class="btn btn-sm btn-primary" action="/evento/update"
 											href=/evento/update/${even.id}><i
-											class="glyphicon glyphicon-pencil"></i>Editar</a>
-								</td>
-								<td><a class="delete btn btn-sm btn-danger"
-									action="/evento/delete"
-									href=/evento/delete/${even.id}><i
-										class="glyphicon glyphicon-remove"></i> Excluir</a></td>
+											class="glyphicon glyphicon-pencil"></i> Editar</a>
+										<a class="delete btn btn-sm btn-danger"
+											action="/evento/delete"
+											href=/evento/delete/${even.id}><i
+											class="glyphicon glyphicon-remove"></i> Excluir</a></td>
 
-								</div>
+									</div>
 								</td>
 							</tr>
 						</c:forEach>

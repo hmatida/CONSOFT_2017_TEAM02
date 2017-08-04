@@ -15,7 +15,7 @@
 		<div class="col-md-8 form-group">
 			<form method="post" action="/fasesConferencia">
 			 <label for="conferencia" name="conferencia">Conferencia</label>
-			 <select name="conferencia">
+			 <select name="conferencia" class="form-control">
 			 <c:forEach items="${conferencia}" var="conf">
 			 	<option value=${conf.id}>${conf.nome_abre}</option>
 			 </c:forEach>
