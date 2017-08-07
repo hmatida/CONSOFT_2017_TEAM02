@@ -43,7 +43,7 @@
 
 									<a class="delete btn btn-sm btn-danger"
 										action="/comite/delete"
-										href=/conferencia/delete/${comite.id}><i
+										href=/comite/delete/${comite.id}><i
 										class="glyphicon glyphicon-remove"></i> Excluir</a>
 								</div>
 							</td>		

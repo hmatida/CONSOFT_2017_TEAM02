@@ -36,13 +36,13 @@
 							<td>${itens.login}</td>
 							<td>
 								<div class="btn-group pull-right">
-									<a class="btn btn-sm btn-primary" action="/conferencia/update"
-										href=/conferencia/update/${conf.id}><i
+									<a class="btn btn-sm btn-primary" action="/cadusuario/form-update"
+										href=/cadusuario/update/${conf.id}><i
 										class="glyphicon glyphicon-pencil"></i>Editar</a>
 
 									<a class="delete btn btn-sm btn-danger"
 										action="/conferencia/delete"
-										href=/conferencia/delete/${conf.id}><i
+										href=/cadusuario/delete/${conf.id}><i
 										class="glyphicon glyphicon-remove"></i> Excluir</a>
 
 								</div>
@@ -51,7 +51,7 @@
 					</c:forEach>
 				</table>
 				<div class="panel-footer">
-					<a class="btn btn-sm btn-success" href=/conferencia/form-input><i
+					<a class="btn btn-sm btn-success" href=/cadusuario/form-input><i
 						class="glyphicon glyphicon-plus"> </i>Adicionar</a>
 				</div>
 			</div>

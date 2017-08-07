@@ -5,10 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -26,7 +29,12 @@ public class Comite {
 	
 	private int participantes;
 	
-	private ArrayList<Usuario> usuarios;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name="comite_usuario", joinColumns=
+				@JoinColumn(name="id"),
+				inverseJoinColumns = @JoinColumn(name="idUsuario") )
+	private List<Usuario> usuarios;
 	
 	@ManyToOne
 	@JoinColumn(name="id_conferencia", referencedColumnName="id_conferencia")
@@ -52,13 +60,9 @@ public class Comite {
 		this.conferencia = conferencia;
 	}
 
-	public ArrayList<Usuario> getUsuarios() {
-		return usuarios;
-	}
-
-
-	public void setUsuarios(ArrayList<Usuario> usuarios) {
-		this.usuarios = usuarios;
+	public void setUsuarios(Usuario usuarios) {
+		this.usuarios.add(usuarios);
+		participantes=participantes++;
 	}
 
 
@@ -91,9 +95,19 @@ public class Comite {
 		this.participantes = participantes;
 	}
 	
-	public void addParticipantes(Usuario usuario){
-		this.usuarios.add(usuario);
+	public void addParticipantes(List<Usuario> usuario){
+		this.usuarios.addAll(usuario);
 		participantes=participantes++;
 	}
 
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+	
 }

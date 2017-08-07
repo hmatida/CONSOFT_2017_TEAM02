@@ -35,10 +35,7 @@ public class Usuario {
 	@DateTimeFormat(iso=ISO.DATE)
 	private Calendar dataNascimento;
 
-
 	private String login;
-
-	
 
 	private String senha;
 

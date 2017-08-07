@@ -46,9 +46,22 @@ public class ComiteController {
 	
 	@PostMapping("/participante/{id}")
 	public ModelAndView save2(@PathVariable Long id, @Valid Comite comite){
-		comite.setId(id);
-		comiteDao.save(comite);
-		return new ModelAndView("redirect:/comite/list");
+		Comite comt=new Comite();
+		comt=comiteDao.findOne(id);
+		if(comt.getNroMaxParticipantes() > comt.getParticipantes()){
+			if(comt.getUsuarios().containsAll(comite.getUsuarios()) == true){
+				return new ModelAndView("redirect:/comite/list");
+			} else {
+				comt.addParticipantes(comite.getUsuarios());
+				comt.setParticipantes(comt.getUsuarios().size());
+				comt.setId(id);
+				comiteDao.save(comt);
+				return new ModelAndView("redirect:/comite/list");
+			}
+		} else{
+			return new ModelAndView("redirect:/comite/list");
+		}
+	
 	}
 	
 	@GetMapping("/list")
