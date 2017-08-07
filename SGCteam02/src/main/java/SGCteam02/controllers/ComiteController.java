@@ -92,5 +92,12 @@ public class ComiteController {
 		mAV.addObject("usuarios", usuarioDao.findAll());
 		return mAV;
 	}
+	
+	@GetMapping("/view-detail/{id}")
+	public ModelAndView detail(@PathVariable("id") Long id){
+		ModelAndView mAV = new ModelAndView("comite/view-detail");
+		mAV.addObject("comite", comiteDao.findOne(id));	
+		return mAV;
+	}
 
 }

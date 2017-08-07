@@ -34,7 +34,7 @@
 										class="glyphicon glyphicon-user"></i> + Part</a>
 
 									<a class="btn btn-sm btn-info"
-										href=/comite/details/${comite.id}><i
+										href=/comite/view-detail/${comite.id}><i
 										class="glyphicon glyphicon-eye-open"></i> Detalhes</a>
 										
 									<a class="btn btn-sm btn-warning"
