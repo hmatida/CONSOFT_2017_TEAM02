@@ -56,9 +56,6 @@ public class Conferencia {
 	@OneToMany(mappedBy="conferencia")
 	private List<Sessao> sessao;
 	
-	@OneToMany(mappedBy="conferencia")
-	private List<Usuario> participantes;
-	
 	public Calendar getDataEvento() {
 		return dataEvento;
 	}
@@ -154,12 +151,7 @@ public class Conferencia {
 	public void setSessao(List<Sessao> sessao) {
 		this.sessao = sessao;
 	}
-	public List<Usuario> getParticipantes() {
-		return participantes;
-	}
-	public void setParticipantes(List<Usuario> participantes) {
-		this.participantes = participantes;
-	}
+
 	public String getEmailRetorno() {
 		return emailRetorno;
 	}
@@ -172,5 +164,7 @@ public class Conferencia {
 	public void setNumMaxParticipantes(int numMaxParticipantes) {
 		this.numMaxParticipantes = numMaxParticipantes;
 	}
+	
+	
 }
 

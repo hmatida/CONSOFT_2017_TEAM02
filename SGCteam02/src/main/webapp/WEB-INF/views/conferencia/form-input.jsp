@@ -82,7 +82,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6">
-								<label for="web">web:</label> <input type="url"
+								<label >web:</label> <input type="url"
 									class="form-control" id="web" name="url" />
 							</div>
 						</div>

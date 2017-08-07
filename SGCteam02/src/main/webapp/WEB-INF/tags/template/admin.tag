@@ -87,6 +87,8 @@
 									class="glyphicon  glyphicon-plus-sign"></span>Cadastrar Fases</a></li>
 									<li><a href="<c:url value='/sessao/form-input'/>"><span
 									class="glyphicon glyphicon-plus-sign"></span>Cad Sessão</a></li>
+									<li><a href="<c:url value='/evento/form-input'/>"><span
+									class="glyphicon glyphicon-plus-sign"></span>Cad Eventos</a></li>
 									<li><a href="<c:url value='/conferencia/list'/>"><span									
 									class="glyphicon glyphicon-list-alt"></span>Listar Conferencias</a></li>
 									<li><a href="<c:url value='/evento/list'/>"><span
