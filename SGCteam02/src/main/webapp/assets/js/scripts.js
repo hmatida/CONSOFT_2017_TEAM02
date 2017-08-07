@@ -16,6 +16,21 @@ $(document).ready(function(){
      });
 });
 
+//Função para mostrar erro, caso houver
+$(document).ready(function(){
+	$("body").mouseenter{
+    if($("#mostra_erro").val() !=""){
+    	(function(){
+            $("#mostra_erro").fadeOut(3000);
+    	})};
+}});
+
+
+$(document).ready(function(){
+    $("body").mouseenter(function(){
+        $("body").fadeOut(3000);
+    });
+});
 
 //Função para buscar dentro da list 
 //$(document).ready(function(){

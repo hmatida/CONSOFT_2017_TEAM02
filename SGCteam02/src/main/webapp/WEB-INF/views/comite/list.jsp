@@ -38,7 +38,7 @@
 										class="glyphicon glyphicon-eye-open"></i> Detalhes</a>
 										
 									<a class="btn btn-sm btn-warning"
-										href=/comite/update/${comite.id}><i
+										href=/comite/form-update/${comite.id}><i
 										class="glyphicon glyphicon-pencil"></i> Editar</a>
 
 									<a class="delete btn btn-sm btn-danger"
@@ -62,6 +62,15 @@
 		<script src="assets/js/jquery-2.1.4.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/scripts.js"></script>
-
 	</body>
+	<footer>
+		<div class="col-md-12">
+			<div class="container">
+			<br>
+			<br>
+				<label id="mostra_erro" for="erro" >${attrib}</label>
+			</div>
+		</div>
+	</footer>
+
 </template:admin>

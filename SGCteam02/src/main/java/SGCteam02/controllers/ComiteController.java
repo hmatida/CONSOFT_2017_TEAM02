@@ -44,22 +44,43 @@ public class ComiteController {
 		return new ModelAndView("redirect:/comite/list");
 	}
 	
+	@PostMapping("/update/{id}")
+	public ModelAndView update(@PathVariable Long id, @Valid Comite comite,
+			BindingResult bR){
+		Comite comite2 = new Comite();
+		comite2=comiteDao.findOne(id);
+		comite.setId(id);
+		comite.setUsuarios(comite2.getUsuarios());
+		comite.setParticipantes(comite2.getUsuarios().size());
+		comiteDao.save(comite);
+		return new ModelAndView("redirect:/comite/list");
+	}
+	
 	@PostMapping("/participante/{id}")
 	public ModelAndView save2(@PathVariable Long id, @Valid Comite comite){
 		Comite comt=new Comite();
 		comt=comiteDao.findOne(id);
+		String attrib="";
+		ModelAndView mAV = new ModelAndView("/comite/list");
+		mAV.addObject("listComite", comiteDao.findAll());
 		if(comt.getNroMaxParticipantes() > comt.getParticipantes()){
 			if(comt.getUsuarios().containsAll(comite.getUsuarios()) == true){
-				return new ModelAndView("redirect:/comite/list");
+				attrib="Participante já incluso nesse comitê.";
+				mAV.addObject("attrib", attrib);
+				return mAV;
 			} else {
 				comt.addParticipantes(comite.getUsuarios());
 				comt.setParticipantes(comt.getUsuarios().size());
 				comt.setId(id);
 				comiteDao.save(comt);
-				return new ModelAndView("redirect:/comite/list");
+				attrib="Participante incluso com sucesso!";
+				mAV.addObject("attrib", attrib);
+				return mAV;
 			}
 		} else{
-			return new ModelAndView("redirect:/comite/list");
+			attrib="Número máximo de participantes já alcançado para esse comitê!";
+			mAV.addObject("attrib", attrib);
+			return mAV;
 		}
 	
 	}
@@ -97,6 +118,25 @@ public class ComiteController {
 	public ModelAndView detail(@PathVariable("id") Long id){
 		ModelAndView mAV = new ModelAndView("comite/view-detail");
 		mAV.addObject("comite", comiteDao.findOne(id));	
+		return mAV;
+	}
+	
+	@GetMapping("/form-update/{id}")
+	public ModelAndView update(@PathVariable("id") Long id){
+		ModelAndView mAV = new ModelAndView("comite/form-update");
+		mAV.addObject("comite", comiteDao.findOne(id));	
+		mAV.addObject("conferencia", conferencia.findAll());
+		return mAV;
+	}
+	
+	@GetMapping("/delete-user/{id}&{id2}")
+	public ModelAndView deleteUser(@PathVariable("id") Long id, @PathVariable("id2") Long id2){
+		Comite comite2 = new Comite();
+		comite2=comiteDao.findOne(id2);
+		comite2.removeParticipante(usuarioDao.findOne(id));
+		comiteDao.save(comite2);
+		ModelAndView mAV = new ModelAndView("comite/view-detail");
+		mAV.addObject("comite", comiteDao.findOne(id2));	
 		return mAV;
 	}
 

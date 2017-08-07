@@ -97,10 +97,14 @@ public class Comite {
 	
 	public void addParticipantes(List<Usuario> usuario){
 		this.usuarios.addAll(usuario);
-		participantes=participantes++;
+		this.participantes=participantes++;
 	}
 
-
+	public void removeParticipante(Usuario usuario){
+		this.usuarios.remove(usuario);
+		this.participantes=usuarios.size();
+	}
+	
 	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}

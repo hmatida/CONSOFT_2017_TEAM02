@@ -12,10 +12,12 @@
 					<div class="col-md-3">
 					</div>
 					<div class="col-md-6">
-					<form action="/comite/list">
+					<form method="post" action="/comite/delete-user/${usuarios.idUsuario}">
 						<div class="form-group">
 								<label for="Nome">Nome: </label> <input type="text" disabled
-									class="form-control" id="nome" name="nome" value="${comite.nome}" />
+									class="form-control" id="nome" value="${comite.nome}" />
+								 <input type="number"
+									class="hidden" id="id" name="id" value="${comite.id}" />
 						</div>
 			
 						<div class="form-group">
@@ -27,7 +29,7 @@
 							<input type="number" disabled class="form-control col-xs-3" id="nroParticipantes" value="${comite.participantes}" name="participantes" />
 						</div>
 						<div class="form-group">
-								<label for="comite" name="comite">Participantes</label> 
+								<label for="comite" name="usuarios">Participantes</label> 
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -46,6 +48,14 @@
 											<td>${usuarios.login}</td>
 											<td><fmt:formatDate value="${usuarios.dataNascimento.time}"
 												pattern="dd/MM/yyyy"/></td>
+											<td>
+												<div class="btn-group pull-right">
+													<a class="delete btn btn-sm btn-danger"
+														action="/comite/delete-user/${usuarios.idUsuario}"
+														href=/comite/delete-user/${usuarios.idUsuario}&${comite.id}> Excluir</a>
+												</div>
+											</td>
+													
 										</tr>
 									</c:forEach>
 								</table>
@@ -53,7 +63,10 @@
 							</div>
 						<br>
 						<br>
+						</form>
+						<a href="/comite/list">
 							<button class="btn btn-primary">Voltar</button>
+						</a>
 						</div>
 			</div>
 			<div class="col-md-3">
