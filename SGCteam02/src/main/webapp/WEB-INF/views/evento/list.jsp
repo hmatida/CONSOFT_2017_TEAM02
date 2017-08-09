@@ -15,7 +15,7 @@
 							<select class="col-md-8 form-control" name="conferencia" id="idConfBusca">
 								<option value="">Todos</option>
 							<c:forEach items="${conferencia}" var="conf">
-								<option value=${conf.nome}>${conf.nome}</option>
+								<option value=${conf.id}>${conf.nome}</option>
 							</c:forEach>
 						</select>
 					</form>
@@ -36,7 +36,7 @@
 						<tbody>
 						<c:forEach items="${eventos}" var="even">
 							<tr>
-								<td class="hidden">${even.conferencia.nome}</td>
+								<td id="captar" class="hidden">${even.conferencia.id}</td>
 								<td>${even.titulo}</td>
 								<td>${even.tipo}</td>
 								<td><fmt:formatDate value="${even.dataInicio.time}"
@@ -71,4 +71,5 @@
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
 </template:admin>

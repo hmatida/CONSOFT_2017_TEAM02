@@ -37,12 +37,12 @@
 							<td>
 								<div class="btn-group pull-right">
 									<a class="btn btn-sm btn-primary" action="/cadusuario/form-update"
-										href=/cadusuario/update/${conf.id}><i
+										href=/cadusuario/form-update/${itens.idUsuario}><i
 										class="glyphicon glyphicon-pencil"></i>Editar</a>
 
 									<a class="delete btn btn-sm btn-danger"
 										action="/conferencia/delete"
-										href=/cadusuario/delete/${conf.id}><i
+										href=/cadusuario/delete/${itens.idUsuario}><i
 										class="glyphicon glyphicon-remove"></i> Excluir</a>
 
 								</div>

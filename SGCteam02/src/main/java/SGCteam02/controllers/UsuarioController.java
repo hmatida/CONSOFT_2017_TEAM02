@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import SGCteam02.daos.FuncaoDao;
 import SGCteam02.daos.UsuarioDao;
+import SGCteam02.models.Evento;
 import SGCteam02.models.Funcao;
 import SGCteam02.models.Usuario;
 
@@ -53,5 +55,28 @@ public class UsuarioController {
 		mAV.addObject("user", userDao.findAll());
 		return mAV;
 		
+	}
+	
+	@GetMapping("/form-update/{idUsuario}")
+	public ModelAndView update(@PathVariable("idUsuario") Long id ){
+		ModelAndView mAV = 
+				new ModelAndView("cadusuario/form-update");
+		mAV.addObject("usuario", userDao.findOne(id));
+		return mAV;
+		
+	}
+	
+	@PostMapping("/updateSave/{id}")
+	public ModelAndView update(@PathVariable("id") Long id, @Valid Usuario usuario){
+		usuario.setIdUsuario(id);
+		userDao.save(usuario);
+		return new ModelAndView("redirect:/cadusuario/list");
+	}
+	
+	
+	@GetMapping("/delete/{id}")
+	public ModelAndView delete(@PathVariable("id") Long id){	
+		userDao.delete(id);
+		return new ModelAndView ("redirect:/cadusuario/list");
 	}
 }

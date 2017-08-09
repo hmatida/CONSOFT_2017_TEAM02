@@ -40,7 +40,7 @@
 							<div class="btn-group pull-right" role="group">
 									<a class="btn btn-sm btn-info"
 										action="/conferencia/listForConf"
-										href=/conferencia/detail/${conf.id}><i
+										href=/conferencia/listForConf/${conf.id}><i
 										class="glyphicon glyphicon-eye-open"></i> Detalhes</a>
 						
 									<a class="btn btn-sm btn-warning"

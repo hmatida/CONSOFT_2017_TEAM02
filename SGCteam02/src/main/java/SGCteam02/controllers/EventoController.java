@@ -59,14 +59,16 @@ public class EventoController {
 	public ModelAndView update(@PathVariable("id") Long id){
 		
 		ModelAndView moAV = new ModelAndView("evento/form-update");
-		moAV.addObject("eventos", eventoDao.findOne(id));
+		moAV.addObject("evento", eventoDao.findOne(id));
+		moAV.addObject("conferencia", conferenciaDao.findAll());	
+		moAV.addObject("local", localDao.findAll());
 		return moAV;
 	}
 	@PostMapping("/updateSave/{id}")
 	public ModelAndView update(@PathVariable("id") Long id, @Valid Evento evento){
 		evento.setId(id);
 		eventoDao.save(evento);
-		return new ModelAndView("redirect:/evento/list1");
+		return new ModelAndView("redirect:/evento/list");
 	}
 	
 	@GetMapping("/form-input")

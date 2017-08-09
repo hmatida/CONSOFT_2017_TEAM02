@@ -16,22 +16,6 @@ $(document).ready(function(){
      });
 });
 
-//Função para mostrar erro, caso houver
-$(document).ready(function(){
-	$("body").mouseenter{
-    if($("#mostra_erro").val() !=""){
-    	(function(){
-            $("#mostra_erro").fadeOut(3000);
-    	})};
-}});
-
-
-$(document).ready(function(){
-    $("body").mouseenter(function(){
-        $("body").fadeOut(3000);
-    });
-});
-
 //Função para buscar dentro da list 
 //$(document).ready(function(){
 //	$("#teste1").mouseenter(function(){
@@ -44,12 +28,12 @@ $(function(){
     $("#idConfBusca").change(function(){
         var filter = $(this).val();
         var count = 0;
-        $("#listaEventos tbody tr").each(function(){
-        	//alert($("#listaEventos tbody tr td #idConf").text());
+        $("#listaEventos tbody tr #captar").each(function(){
+            //alert("HTML: " + $(this).text());
             if ($(this).text().search(filter) < 0) {
-                $(this).fadeOut();
+                $("#listaEventos tbody tr").fadeOut();
             }else{
-                $(this).show();
+                $("#listaEventos tbody tr").fadeIn();
                 count++;
             }
         });                    

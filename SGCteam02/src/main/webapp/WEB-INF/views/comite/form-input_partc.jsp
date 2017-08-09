@@ -48,7 +48,8 @@
 						<br>
 						<br>
 							<button type="submit" class="btn btn-primary">Salvar</button>
-						</div>
+						</form>
+				</div>
 			</div>
 			<div class="col-md-3">
 			</div>

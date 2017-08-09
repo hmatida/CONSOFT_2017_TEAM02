@@ -36,6 +36,14 @@ public class ConferenciaController {
 		return new ModelAndView("redirect:/conferencia/list");
 	}
 	
+	@PostMapping("/updateSave/{id}")
+	public ModelAndView updateSave(@PathVariable Long id,  @Valid Conferencia a,
+			BindingResult bR){
+		a.setId(id);
+		confDao.save(a);
+		return new ModelAndView("redirect:/conferencia/list");
+	}
+	
 	@GetMapping("/list")
 	public ModelAndView list(){
 		ModelAndView mAV = 
@@ -53,7 +61,7 @@ public class ConferenciaController {
 	@GetMapping("/update/{id}")
 	public ModelAndView update(@PathVariable("id") Long id){
 		
-		ModelAndView moAV = new ModelAndView("conferencia/form-input");
+		ModelAndView moAV = new ModelAndView("conferencia/form-update");
 		moAV.addObject("conferencia", confDao.findOne(id));
 		return moAV;
 	}

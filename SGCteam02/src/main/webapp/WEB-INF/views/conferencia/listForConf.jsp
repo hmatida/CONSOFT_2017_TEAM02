@@ -26,7 +26,7 @@
 						<div class="form-group">
 							<div class="col-md-6">
 								<label for="Numero Part">Nº Participantes</label> <input type="number"
-									class="form-control" id="n_participantes" name="n_participantes" value="${conferencia.n_participantes}" />
+									class="form-control" id="n_participantes" name="n_participantes" value="${conferencia.numMaxParticipantes}" />
 							</div>
 						</div>
 						
@@ -85,7 +85,7 @@
 						<div class="form-group">
 							<div class="col-md-6">
 								<label for="Cidade">Cidade:</label> <input type="text"
-									class="form-control" id="cidade" name="cidade" value="${conferencia.cidade}"/>
+									class="form-control" id="cidade" name="cidade"/>
 							</div>
 
 						</div>
@@ -116,8 +116,10 @@
 					<div class="col-md-3">
 					</div>
 					<div class="col-md-6">
+					<br>
+					<br>
 					<p><strong>Eventos cadastrados:</strong></p>						
-								<table class="table table-condensed table-striped">
+								<table class="table table-condensed">
 									<thead>
 										<tr>
 											<td>Título evento</td>
@@ -135,8 +137,10 @@
 										</tr>
 									</c:forEach>
 								</table>
+								<br>
+								<br>
 						<p><strong>Fases da conferencia</strong></p>	
-							<table class="table table-condensed table-striped">
+							<table class="table table-condensed">
 								<thead>
 									<tr>
 										<td>Fase</td>
@@ -150,8 +154,10 @@
 									</c:forEach>
 								</thead>
 								</table>
+								<br>
+								<br>
 								<p><strong>Sessões da conferencia</strong></p>	
-							<table class="table table-condensed table-striped">
+							<table class="table table-condensed">
 								<thead>
 									<tr>
 										<td>Nome</td>
@@ -166,9 +172,12 @@
 								</thead>
 							</table>
 								
-								
+							<a href="/conferencia/list">
+							<button class="btn btn-info">Voltar</button>
+							</a>
 						</div>
 								<div class="col-md-3"></div>
+						
 						</div>
 					</div>
 				</div>
