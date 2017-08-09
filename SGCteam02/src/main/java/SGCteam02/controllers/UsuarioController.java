@@ -47,6 +47,14 @@ public class UsuarioController {
 		return new ModelAndView("redirect:/cadusuario/list");
 	}
 	
+	@PostMapping("/init")
+	public ModelAndView saveinit(@Valid Usuario user, BindingResult bR){
+		userDao.save(user);
+		String retorno = "Usuário cadastrado com sucesso!";
+		ModelAndView mAV = new ModelAndView("home/index");
+		mAV.addObject("attrib", retorno);
+		return mAV;
+	}
 	
 	@GetMapping("/list")
 	public ModelAndView lista(){

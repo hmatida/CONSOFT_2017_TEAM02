@@ -43,7 +43,7 @@
 
 	<!-- FINAL NAV -->
 	<div class="container">
-		<header class="row">
+		<header class="row">		<div class="col-md-12">			<div class="container">				<label id="mostra_erro" for="erro" >${attrib}</label>			</div>		</div>
 
 		<h1 class="basic-title">Bem Vindo ao Sistema de Gerenciamento de
 			Conferência</h1>
@@ -85,9 +85,9 @@
 				<div class="panel-heading">Cadastrar-se</div>
 
 					
-				<form class="form-group" action="cadastrar">
+				<form class="form-group" method="post" action="/cadusuario/init">
 					<!-- Text input-->
-
+ 	 	
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">Nome: </span> <input id="nome"
@@ -144,12 +144,6 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="input-group">
-							<span class="input-group-addon">Sexo: </span> <input type="radio"
-								name="sexo" id="rad-0" value="1" checked="checked" placeholder="masculino">
-							masculino <input type="radio" name="sexo" id="rad-1" value="2" placeholder="feminino">
-							feminino
-						</div>
 					</div>
 
 					<div class="form-group">
@@ -164,10 +158,9 @@
 
 
 		</div>
-	</div>
-
+	</div>
 	<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
 	<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
-	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/scripts.js"></script>		
 </body>
 </html>
